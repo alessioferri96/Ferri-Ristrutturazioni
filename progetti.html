@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti | Ferri Ristrutturazioni</title>
+    <meta name="description"
+        content="Esplora il portfolio di Ferri Ristrutturazioni. Progetti residenziali, ville, uffici e spazi commerciali realizzati con eccellenza.">
+
+    <!-- Google Fonts: Oswald & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN for Development) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6EC1E4',
+                        secondary: 'rgb(40, 41, 43)',
+                        accent: '#61CE70',
+                        dark: '#000000',
+                        highlight: '#FFBC7D',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    container: {
+                        center: true,
+                        padding: '1rem',
+                        screens: {
+                            '2xl': '1300px',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Slider Transitions */
+        .slide {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .slide-content {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease-out 0.3s;
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans text-secondary antialiased bg-gray-50 selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Header (Identical to Home) -->
+    <header id="site-header"
+        class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out bg-transparent text-white [&.scrolled]:bg-white [&.scrolled]:text-black [&.scrolled]:shadow-md group [&.menu-active]:z-[70] [&.menu-active]:!bg-transparent [&.menu-active]:!shadow-none [&.menu-active]:!transition-none">
+        <div
+            class="container flex justify-between items-center h-20 md:h-[120px] transition-all duration-500 ease-in-out group-[.scrolled]:h-20">
+            <!-- Logo -->
+            <a href="index.html"
+                class="flex flex-col leading-none group-[.scrolled]:text-black text-white transition-all duration-500 origin-left group-[.scrolled]:scale-[0.9] relative z-10 group-[.menu-active]:!text-white scale-110 md:scale-125">
+                <span class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
+                <span
+                    class="text-xs md:text-sm tracking-[0.2em] uppercase font-light text-primary">Ristrutturazioni</span>
+            </a>
+
+            <!-- Scrolled Center Icons -->
+            <div
+                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-6 md:gap-8 opacity-0 group-[.scrolled]:opacity-100 transition-opacity duration-500 pointer-events-none group-[.scrolled]:pointer-events-auto group-[.menu-active]:!opacity-0 group-[.menu-active]:pointer-events-none group-[.menu-active]:!transition-none">
+                <a href="tel:+391234567890"
+                    class="text-black hover:text-primary transition-colors hover:scale-110 transform duration-300"
+                    aria-label="Chiama Ora">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:info@ferriristrutturazioni.it"
+                    class="text-black hover:text-primary transition-colors hover:scale-110 transform duration-300"
+                    aria-label="Invia Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Menu Toggle -->
+            <button id="mobile-menu-toggle"
+                class="p-2 hover:text-primary transition-colors group relative z-[70] [&.menu-open]:text-white"
+                aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="transition-transform duration-300 group-hover:scale-110 md:w-9 md:h-9">
+                    <line x1="4" y1="6" x2="20" y2="6"
+                        class="origin-center transition-transform duration-300 ease-in-out [.menu-open_&]:rotate-45 [.menu-open_&]:translate-y-[6px]">
+                    </line>
+                    <line x1="10" y1="12" x2="20" y2="12"
+                        class="transition-opacity duration-300 ease-in-out [.menu-open_&]:opacity-0"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"
+                        class="origin-center transition-transform duration-300 ease-in-out [.menu-open_&]:-rotate-45 [.menu-open_&]:-translate-y-[6px]">
+                    </line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content: Immersive Slider -->
+    <main class="relative h-[100dvh] w-full bg-secondary overflow-hidden">
+
+        <!-- Slider Container -->
+        <div id="projects-slider" class="absolute inset-0 w-full h-full">
+
+            <!-- Slide 1 -->
+            <div class="slide active absolute inset-0 w-full h-full">
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center"
+                    style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');">
+                </div>
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+                <!-- Content -->
+                <div class="container relative h-full flex items-center px-6 z-10">
+                    <div class="max-w-2xl slide-content">
+                        <span
+                            class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Residenziale</span>
+                        <h1
+                            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
+                            Villa<br>Belvedere
+                        </h1>
+                        <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
+                            Ristrutturazione completa di una villa storica con vista lago. Recupero materiali originali
+                            e integrazione domotica avanzata.
+                        </p>
+                        <a href="404.html"
+                            class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
+                            <span
+                                class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
+                                il Progetto</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transform group-hover:translate-x-2 transition-transform">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 w-full h-full">
+                <div class="absolute inset-0 bg-cover bg-center"
+                    style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop');">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+                <div class="container relative h-full flex items-center px-6 z-10">
+                    <div class="max-w-2xl slide-content">
+                        <span
+                            class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Commerciale</span>
+                        <h1
+                            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
+                            Tech<br>Hub Milano
+                        </h1>
+                        <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
+                            Conversione di un ex capannone industriale in uffici open space. Design moderno, acustica
+                            ottimizzata e aree relax.
+                        </p>
+                        <a href="404.html"
+                            class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
+                            <span
+                                class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
+                                il Progetto</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transform group-hover:translate-x-2 transition-transform">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide absolute inset-0 w-full h-full">
+                <div class="absolute inset-0 bg-cover bg-center"
+                    style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop');">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+                <div class="container relative h-full flex items-center px-6 z-10">
+                    <div class="max-w-2xl slide-content">
+                        <span
+                            class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Residenziale</span>
+                        <h1
+                            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
+                            Loft<br>Navigli
+                        </h1>
+                        <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
+                            Restyling completo di un appartamento su due livelli. Scala in ferro su misura, pareti in
+                            mattoni a vista e finiture luxury.
+                        </p>
+                        <a href="404.html"
+                            class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
+                            <span
+                                class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
+                                il Progetto</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transform group-hover:translate-x-2 transition-transform">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="absolute bottom-10 right-10 md:right-20 flex items-center gap-6 z-20">
+            <button id="prev-slide"
+                class="text-white hover:text-primary transition-colors p-2 border border-white/20 rounded-full hover:border-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                </svg>
+            </button>
+            <div class="text-white font-display text-xl tracking-widest">
+                <span id="current-slide">01</span><span class="text-white/40 mx-2">/</span><span
+                    id="total-slides">03</span>
+            </div>
+            <button id="next-slide"
+                class="text-white hover:text-primary transition-colors p-2 border border-white/20 rounded-full hover:border-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Quick Nav Strip (Bottom Left Overlay) -->
+        <div class="absolute bottom-10 left-6 md:left-20 z-20 hidden md:block">
+            <div class="flex gap-4">
+                <button
+                    class="w-20 h-16 bg-cover bg-center border-2 border-primary cursor-pointer transition-transform hover:scale-110 shadow-lg"
+                    style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=200');"
+                    onclick="slider.goTo(0)"></button>
+                <button
+                    class="w-20 h-16 bg-cover bg-center border-2 border-transparent hover:border-primary cursor-pointer transition-transform hover:scale-110 opacity-70 hover:opacity-100 shadow-lg"
+                    style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=200');"
+                    onclick="slider.goTo(1)"></button>
+                <button
+                    class="w-20 h-16 bg-cover bg-center border-2 border-transparent hover:border-primary cursor-pointer transition-transform hover:scale-110 opacity-70 hover:opacity-100 shadow-lg"
+                    style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200');"
+                    onclick="slider.goTo(2)"></button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer intentionally omitted or simplified for Fullscreen Layout?? 
+         Wait, concept said "3. Footer: Standard". 
+         But in a 100vh slider, the footer is usually below the fold (scrollable) or not there.
+         I will add it below the main section so user can scroll down to see it.
+    -->
+
+    <!-- Footer (Standard) -->
+    <footer class="bg-white text-black relative z-30">
+        <!-- Top Section: Contact Form Link/Anchor -->
+        <section id="contact-form-section" class="relative py-24 bg-fixed bg-center bg-cover"
+            style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="container relative z-10">
+                <div class="max-w-4xl mx-auto text-center mb-16 scroll-reveal">
+                    <h3 class="font-display text-5xl font-bold uppercase mb-8 tracking-widest text-white">Contatti</h3>
+                    <p class="text-gray-200 text-xl leading-relaxed font-light max-w-2xl mx-auto">
+                        Mettiamo in campo vasta esperienza e competenza. Per noi è fondamentale che tu possa contare su
+                        di noi in ogni fase del processo e oltre.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto scroll-reveal" style="transition-delay: 200ms;">
+                    <form class="space-y-8">
+                        <!-- Simplified form inputs based on Home -->
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div class="relative group">
+                                <label class="sr-only" for="name">Nome</label>
+                                <input type="text" id="name"
+                                    class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
+                                    placeholder="Nome">
+                            </div>
+                            <div class="relative group">
+                                <label class="sr-only" for="phone">Telefono</label>
+                                <input type="text" id="phone"
+                                    class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
+                                    placeholder="Telefono">
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <label class="sr-only" for="email">Email</label>
+                            <input type="email" id="email"
+                                class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
+                                placeholder="Indirizzo Email">
+                        </div>
+                        <div class="relative group">
+                            <label class="sr-only" for="message">Messaggio</label>
+                            <textarea id="message"
+                                class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors resize-none text-lg"
+                                rows="2" placeholder="Come possiamo aiutarti?"></textarea>
+                        </div>
+                        <div class="relative group flex items-start gap-3 mt-4 text-left">
+                            <input type="checkbox" id="privacy-footer"
+                                class="mt-1 w-4 h-4 appearance-none border border-white/50 checked:bg-white checked:border-white transition-colors cursor-pointer relative after:content-['✓'] after:absolute after:text-secondary after:text-xs after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 checked:after:opacity-100">
+                            <label for="privacy-footer"
+                                class="text-sm text-gray-300 font-light leading-tight cursor-pointer select-none">
+                                Ho letto e accetto la <a href="404.html"
+                                    class="underline hover:text-white transition-colors">Privacy Policy</a> e acconsento
+                                al trattamento dei dati personali.
+                            </label>
+                        </div>
+                        <div class="pt-8 text-center">
+                            <button type="submit"
+                                class="group relative bg-transparent border border-white text-white font-bold uppercase px-12 py-5 overflow-hidden hover:text-secondary transition-colors duration-300 tracking-widest text-sm shadow-xl">
+                                <span
+                                    class="absolute inset-0 w-full h-full bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
+                                <span class="relative z-10">Invia</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Middle Section: Navigation & CTA -->
+        <section class="py-12 border-b border-gray-200">
+            <div class="container flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="w-48 text-center md:text-left transform scale-125 origin-center md:origin-left">
+                    <a href="index.html" class="flex flex-col leading-none text-black transition-all duration-500">
+                        <span
+                            class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
+                        <span
+                            class="text-xs md:text-sm tracking-[0.2em] uppercase font-light text-primary">Ristrutturazioni</span>
+                    </a>
+                </div>
+                <!-- Navigation -->
+                <nav
+                    class="flex flex-wrap justify-center gap-8 font-bold uppercase text-sm tracking-widest text-gray-600">
+                    <a href="chi-siamo.html" class="hover:text-primary transition-colors">Chi Siamo</a>
+                    <a href="servizi.html" class="hover:text-primary transition-colors">Servizi</a>
+                    <a href="progetti.html" class="text-primary hover:text-primary transition-colors">Progetti</a>
+                    <a href="contatti.html" class="hover:text-primary transition-colors">Contatti</a>
+                </nav>
+                <!-- CTA -->
+                <div>
+                    <a href="tel:+391234567890"
+                        class="inline-block group relative border border-black px-6 py-3 font-bold uppercase text-xs tracking-widest overflow-hidden hover:text-white transition-colors bg-transparent text-black">
+                        <span
+                            class="absolute inset-0 w-full h-full bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
+                        <span class="relative z-10">Chiama Ora</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accreditations Section -->
+        <section class="py-12 bg-white">
+            <div class="container flex flex-wrap justify-center items-center gap-12 opacity-80">
+                <div
+                    class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
+                    <div class="font-bold text-gray-400 text-xl">SSIP</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Safety<br>Schemes</div>
+                </div>
+                <div
+                    class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
+                    <div class="font-bold text-gray-400 text-xl">ISO</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">9001<br>14001</div>
+                </div>
+                <div
+                    class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
+                    <div class="font-bold text-gray-400 text-xl">Safe</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Contractor<br>Approved
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright Section -->
+        <section class="py-6 bg-white border-t border-gray-200">
+            <div class="container flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
+                <p>&copy; 2026 Ferri Ristrutturazioni. P.IVA 12345678901. Tutti i diritti riservati.</p>
+                <div class="flex gap-6">
+                    <a href="404.html" class="hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="404.html" class="hover:text-primary transition-colors">Cookie Policy</a>
+                    <div class="flex gap-4 border-l border-gray-300 pl-6 ml-2">
+                        <a href="404.html" class="hover:text-primary transition-colors" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="404.html" class="hover:text-primary transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Inline script for Projects page specific logic (Slider)
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const thumbs = document.querySelectorAll('.absolute.bottom-10.left-6 button'); // Quick Nav Thumbs
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const currentCounter = document.getElementById('current-slide');
+            const totalCounter = document.getElementById('total-slides');
+
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            totalCounter.textContent = String(totalSlides).padStart(2, '0');
+
+            function updateSlider(index) {
+                // Bounds check
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+
+                currentIndex = index;
+
+                // Update Active Slide
+                slides.forEach((slide, i) => {
+                    if (i === currentIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Update Thumbs active state
+                thumbs.forEach((thumb, i) => {
+                    if (i === currentIndex) {
+                        thumb.classList.add('border-primary');
+                        thumb.classList.remove('border-transparent', 'opacity-70');
+                    } else {
+                        thumb.classList.remove('border-primary');
+                        thumb.classList.add('border-transparent', 'opacity-70');
+                    }
+                });
+
+                // Update Counter
+                currentCounter.textContent = String(currentIndex + 1).padStart(2, '0');
+            }
+
+            // Public method for onclick
+            window.slider = {
+                goTo: (index) => updateSlider(index)
+            };
+
+            // Events
+            nextBtn.addEventListener('click', () => updateSlider(currentIndex + 1));
+            prevBtn.addEventListener('click', () => updateSlider(currentIndex - 1));
+
+            // Optional Autoplay
+            let autoplayInterval = setInterval(() => updateSlider(currentIndex + 1), 8000);
+
+            // Pause on interaction
+            const stopAutoplay = () => clearInterval(autoplayInterval);
+            nextBtn.addEventListener('click', stopAutoplay);
+            prevBtn.addEventListener('click', stopAutoplay);
+            thumbs.forEach(btn => btn.addEventListener('click', stopAutoplay));
+        });
+    </script>
+</body>
+
+</html>
