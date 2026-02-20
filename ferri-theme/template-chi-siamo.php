@@ -264,6 +264,62 @@ get_header(); ?>
                         </div>
                     </div>
 
+                    <!-- Timeline Item 2020 -->
+                    <div class="relative mb-20 md:mb-32 group">
+                        <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
+                            <div
+                                class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out order-1 w-[calc(100%-3rem)] ml-12 md:ml-0 md:w-[45%] mb-8 md:mb-0 md:text-right p-6 bg-white shadow-lg border-l-4 border-primary rounded-sm md:border-l-0 md:border-r-4 relative z-20">
+                                <span class="block text-4xl font-display font-bold text-gray-200 mb-2">2020</span>
+                                <h3 class="font-bold uppercase text-lg mb-2 text-secondary">Innovazione Green</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed">Integrazione di tecnologie per
+                                    l'efficientamento energetico e domotica avanzata in tutti i nostri progetti.</p>
+                            </div>
+                            <div
+                                class="timeline-point absolute top-8 md:top-1/2 left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white transform -translate-x-2 md:-translate-x-2 md:-translate-y-1/2 z-30 shadow transition-all duration-500">
+                            </div>
+                            <div class="order-1 w-full md:w-[45%] pl-12 md:pl-0 relative z-0">
+                                <div
+                                    class="absolute -top-12 -right-6 md:top-1/2 md:left-12 md:right-auto transform md:-translate-y-1/2 -rotate-[10deg] md:rotate-0 w-40 md:w-[21rem] hover:z-30 hover:scale-105 transition-transform duration-300">
+                                    <div
+                                        class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 saturate-50 hover:saturate-100">
+                                        <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?q=80&w=2070&auto=format&fit=crop"
+                                            alt="Smart Home Tech"
+                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2026 -->
+                    <div class="relative group">
+                        <div class="flex flex-col md:flex-row items-center justify-between w-full relative">
+                            <div class="order-2 w-full md:w-[45%] relative z-0 md:order-1">
+                                <div
+                                    class="absolute -top-12 left-0 md:top-1/2 md:right-12 md:left-auto transform md:-translate-y-1/2 rotate-[10deg] md:rotate-0 w-40 md:w-[21rem] hover:z-30 hover:scale-105 transition-transform duration-300">
+                                    <div
+                                        class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200">
+                                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2072&auto=format&fit=crop"
+                                            alt="Future Construction"
+                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="timeline-point absolute top-8 md:top-1/2 left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white transform -translate-x-2 md:-translate-x-2 md:-translate-y-1/2 z-30 shadow transition-all duration-500">
+                            </div>
+                            <div class="order-1 w-full md:w-[45%] mb-8 md:mb-0 md:pl-12 relative z-20 md:order-2">
+                                <div
+                                    class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out w-[calc(100%-3rem)] ml-12 md:ml-0 md:w-full p-6 bg-white shadow-lg border-l-4 border-primary rounded-sm text-left">
+                                    <span class="block text-4xl font-display font-bold text-gray-200 mb-2">2026</span>
+                                    <h3 class="font-bold uppercase text-lg mb-2 text-secondary">Il Futuro</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Continuiamo a crescere, investendo
+                                        in formazione e nuovi materiali, per costruire le case del domani.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

@@ -79,16 +79,28 @@
     <!-- Navigation Menu (Fullscreen Overlay) -->
     <div id="fullscreen-menu"
         class="fixed inset-0 bg-secondary z-[60] pt-24 px-6 transform translate-x-full flex flex-col items-center justify-center text-center text-white transition-transform duration-300">
-        <!-- WP Menu Wrapper - styled children explicitly to bypass WP default markup issues -->
         <nav
             class="flex flex-col gap-6 font-display text-4xl font-bold uppercase text-white mb-12 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-6 [&_li]:list-none [&_a]:text-white [&_a]:hover:text-primary [&_a]:transition-colors">
             <?php
-            // Use fallback if menu missing, but attempt Primary Menu.
-            wp_nav_menu(array(
-                'theme_location' => 'menu-1',
-                'container' => false,
-                'fallback_cb' => false, // We could supply a function returning simple links, but usually the user will set it.
-            ));
+            // Se esiste un menu assegnato a 'menu-1' lo mostra, in caso contrario 
+            // crea un elenco fallback usando l'output standard di `wp_list_pages` o link HTML
+            if (has_nav_menu('menu-1')) {
+                wp_nav_menu(array(
+                    'theme_location' => 'menu-1',
+                    'container' => false,
+                    'fallback_cb' => false,
+                ));
+            } else {
+                // Fallback statico per visibilità immediata prima del setup su WP
+                ?>
+                <ul class="flex flex-col gap-6">
+                    <li><a href="<?php echo esc_url(home_url('/chi-siamo')); ?>">Chi Siamo</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/servizi')); ?>">Servizi</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/progetti')); ?>">Progetti</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/contatti')); ?>">Contatti</a></li>
+                </ul>
+                <?php
+            }
             ?>
         </nav>
 

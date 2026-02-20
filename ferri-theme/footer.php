@@ -73,12 +73,23 @@
             <nav
                 class="flex flex-wrap justify-center gap-8 font-bold uppercase text-sm tracking-widest text-gray-600 [&_ul]:flex [&_ul]:flex-wrap [&_ul]:gap-8 [&_li]:list-none [&_a]:text-gray-600 [&_a]:hover:text-primary [&_a]:transition-colors">
                 <?php
-                // Usiamo lo stesso menu principale anche qui.
-                wp_nav_menu(array(
-                    'theme_location' => 'menu-1',
-                    'container' => false,
-                    'fallback_cb' => false,
-                ));
+                // Se c'è un menu, mostralo. Se no, mostra le voci statiche
+                if (has_nav_menu('menu-1')) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'menu-1',
+                        'container' => false,
+                        'fallback_cb' => false,
+                    ));
+                } else {
+                    ?>
+                    <ul class="flex flex-wrap gap-8">
+                        <li><a href="<?php echo esc_url(home_url('/chi-siamo')); ?>">Chi Siamo</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/servizi')); ?>">Servizi</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/progetti')); ?>">Progetti</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/contatti')); ?>">Contatti</a></li>
+                    </ul>
+                    <?php
+                }
                 ?>
             </nav>
             <!-- CTA -->
