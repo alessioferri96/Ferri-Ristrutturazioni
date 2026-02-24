@@ -23,56 +23,6 @@
     <!-- Iubenda Cookie Solution -->
     <script type="text/javascript"
         src="https://embeds.iubenda.com/widgets/5cf8544a-d00c-4bd7-b5af-70ac7e398983.js"></script>
-    <style>
-        /* Animazione Movimento Martello */
-        @keyframes hammer {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            10% {
-                transform: rotate(-40deg);
-            }
-
-            15% {
-                transform: rotate(30deg);
-            }
-
-            25% {
-                transform: rotate(30deg);
-            }
-
-            30% {
-                transform: rotate(-40deg);
-            }
-
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-
-        .animate-hammer {
-            animation: hammer 2.5s infinite ease-in-out;
-            transform-origin: 30% 90%;
-        }
-
-        /* Animazione Respiro/Lavoro Operaio */
-        @keyframes worker-bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-3px);
-            }
-        }
-
-        .animate-worker-bounce {
-            animation: worker-bounce 2.5s infinite ease-in-out;
-        }
-    </style>
 </head>
 
 <body
@@ -89,51 +39,6 @@
     <!-- Main Content -->
     <main class="flex-grow flex flex-col items-center justify-center relative px-4 text-center mt-10 md:mt-0">
 
-        <!-- Animated SVG Construction Worker -->
-        <div class="w-48 h-48 md:w-56 md:h-56 mb-10 mx-auto" style="filter: drop-shadow(0 15px 15px rgba(0,0,0,0.25));">
-            <!-- Triangle Sign -->
-            <svg viewBox="0 0 100 100" class="w-full h-full block" xmlns="http://www.w3.org/2000/svg">
-                <!-- Bordo Esterno Giallo e Nero -->
-                <polygon points="50,5 95,85 5,85" fill="#facc15" stroke="#000" stroke-width="4"
-                    stroke-linejoin="round" />
-                <!-- Sfondo Triangolo Bianco -->
-                <polygon points="50,13 87,79 13,79" fill="#fff" stroke="#facc15" stroke-width="2.5"
-                    stroke-linejoin="round" />
-
-                <!-- Inner Worker Group -->
-                <g transform="translate(0, 5)">
-                    <g class="animate-worker-bounce">
-                        <!-- Corpo -->
-                        <path d="M40,75 L40,50 C40,40 60,40 60,50 L60,75 Z" fill="#28292b" />
-                        <!-- Testa -->
-                        <circle cx="50" cy="36" r="8" fill="#FFBC7D" />
-                        <!-- Caschetto Giallo -->
-                        <path d="M40,35 Q50,18 60,35 Z" fill="#facc15" stroke="#28292b" stroke-width="0.5" />
-                        <rect x="36" y="34" width="28" height="3" rx="1" fill="#facc15" />
-                    </g>
-                </g>
-
-                <!-- Braccio col Martello (Animato Separatamente) -->
-                <g transform="translate(62, 53)">
-                    <g class="animate-hammer">
-                        <!-- Braccio -->
-                        <path d="M-5,-5 L8,8" stroke="#FFBC7D" stroke-width="4.5" stroke-linecap="round" />
-                        <!-- Manico Martello -->
-                        <line x1="8" y1="8" x2="25" y2="-9" stroke="#8B4513" stroke-width="3" stroke-linecap="round" />
-                        <!-- Testa Martello -->
-                        <rect x="20" y="-13" width="9" height="15" fill="#718096" rx="2" transform="rotate(45, 24, -5)"
-                            stroke="#28292b" stroke-width="0.5" />
-                    </g>
-                </g>
-
-                <!-- Pila di Mattoni da colpire -->
-                <g transform="translate(0, -2)">
-                    <rect x="35" y="70" width="10" height="5" fill="#e53e3e" stroke="#000" stroke-width="0.5" />
-                    <rect x="46" y="70" width="10" height="5" fill="#e53e3e" stroke="#000" stroke-width="0.5" />
-                    <rect x="40" y="65" width="10" height="5" fill="#e53e3e" stroke="#000" stroke-width="0.5" />
-                </g>
-            </svg>
-        </div>
 
         <h1 class="font-display text-5xl md:text-7xl font-bold uppercase text-secondary mb-4 drop-shadow-md">
             Work in <span class="text-primary">Progress</span>
