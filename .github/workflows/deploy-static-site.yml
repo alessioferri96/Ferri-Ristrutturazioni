@@ -1,15 +1,18 @@
-name: Deploy WordPress Theme via FTP
+name: Deploy Static Site via FTP
 
 on:
   push:
     branches:
-      - main # O il nome del branch principale che stai utilizzando (es. master)
-    paths:
-      - 'ferri-theme/**' # Il workflow parte solo se viene modificato qualcosa dentro questa cartella
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '.agent/**'
+      - 'agents/**'
+  workflow_dispatch: 
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploy Static Site
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
@@ -21,16 +24,19 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Mappa la cartella 'ferri-theme' locale nella cartella di destinazione remota
-          local-dir: ./ferri-theme/
+          # Mappa la cartella root locale nella cartella di destinazione remota
+          local-dir: ./
           server-dir: ${{ secrets.FTP_TARGET_DIR || '/' }} 
-          # Nota: se FTP_TARGET_DIR non è impostato o è vuoto, caricherà nella root FTP.
-          # È fortemente consigliato impostare FTP_TARGET_DIR su qualcosa come
-          # public_html/wp-content/themes/ferri-theme/ oppure wp-content/themes/ferri-theme/
           
-          # Evita di sovrascrivere o cancellare roba inavvertitamente se necessario,
-          # o semplicemente escludi determinati file o cartelle.
+          # Escludi file non necessari al sito live
           exclude: |
             **/.git*
             **/.git*/**
-            **/node_modules/**
+            .agent/**
+            .github/**
+            agents/**
+            docs/**
+            resources/**
+            README.md
+            GEMINI.md
+            *.zip
