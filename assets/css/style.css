@@ -61,6 +61,7 @@
     will-change: transform, opacity;
     backface-visibility: hidden;
     transform-style: preserve-3d;
+    opacity: 0;
 }
 
 .animate-fade-in-down {
@@ -68,6 +69,7 @@
     will-change: transform, opacity;
     backface-visibility: hidden;
     transform-style: preserve-3d;
+    opacity: 0;
 }
 
 /* Timeline Point Animations */
