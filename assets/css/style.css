@@ -106,3 +106,8 @@
 .iub__us-widget {
     display: none !important;
 }
+
+/* Evitare animazioni indesiderate al caricamento della pagina (FOUC) */
+body.preload * {
+    transition: none !important;
+}
