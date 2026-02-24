@@ -1,3 +1,13 @@
+/* =========================================================================
+   0. PREVENT FOUC TRANSITIONS (Animazioni al caricamento)
+   ========================================================================= */
+window.addEventListener('load', () => {
+    // Attendiamo un paint frame addizionale per assicurarci che Tailwind abbia iniettato il CSS
+    requestAnimationFrame(() => {
+        document.body.classList.remove('preload');
+    });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =========================================

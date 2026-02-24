@@ -35,4 +35,9 @@ In molti moderni engine CSS (incluso lo stack base di Tailwind o stili inline in
 4. Richiesta verifica live all'utente, ricaricando le pagine più volte. L'effetto "risucchio" dei pulsanti alla prima riga non dovrebbe più essere disegnato.
 
 ## Riepilogo Post-Implementazione
-*Da compilare a fine lavori*
+- **Stato:** Completato.
+- **Modifiche Effettuate:**
+  - Aggiunta la classe `preload` ai tag `<body ...>` di tutti e 6 i documenti HTML (`index`, `chi-siamo`, `servizi`, `progetti`, `contatti` e `404`).
+  - Aggiunta la regola CSS globale in `style.css` per bloccare le transizioni sui figli di `body.preload`.
+  - Inserito il behavior in `main.js` per rimuovere dinamicamente la classe `preload` dal body non appena scatta l'evento `DOMContentLoaded`.
+- **Prossimi Passi:** L'utente verificherà che ricaricando le pagine non ci sia più il flash visivo dell'animazione sui pulsanti allo stato base.
