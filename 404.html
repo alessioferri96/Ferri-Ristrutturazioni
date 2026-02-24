@@ -35,6 +35,9 @@
             }
         }
     </script>
+    <!-- Iubenda Cookie Solution -->
+    <script type="text/javascript"
+        src="https://embeds.iubenda.com/widgets/5cf8544a-d00c-4bd7-b5af-70ac7e398983.js"></script>
 </head>
 
 <body class="font-sans text-secondary antialiased bg-gray-50 h-screen overflow-hidden flex flex-col">
@@ -100,9 +103,20 @@
         </div>
     </main>
 
-    <!-- Simple Footer Copyright -->
-    <footer class="p-6 text-center text-xs text-gray-400">
-        &copy; 2026 Ferri Ristrutturazioni.
+    <!-- Simple Footer Copyright w/ Policy -->
+    <footer
+        class="p-6 text-center text-xs text-gray-400 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
+        <span>&copy; 2026 Ferri Ristrutturazioni.</span>
+        <div class="flex gap-4">
+            <a href="https://www.iubenda.com/privacy-policy/10210722"
+                class="iubenda-white iubenda-noiframe iubenda-embed hover:text-primary transition-colors"
+                title="Privacy Policy ">Privacy Policy</a>
+            <a href="https://www.iubenda.com/privacy-policy/10210722/cookie-policy"
+                class="iubenda-white iubenda-noiframe iubenda-embed hover:text-primary transition-colors"
+                title="Cookie Policy ">Cookie Policy</a>
+            <script
+                type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
+        </div>
     </footer>
 
 </body>

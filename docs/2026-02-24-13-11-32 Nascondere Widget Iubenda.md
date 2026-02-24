@@ -26,4 +26,6 @@ Aggiungere la seguente regola nel file `assets/css/style.css`:
 3. Verifica live: il widget testuale in basso non deve più apparire, mentre l'icona circolare di Iubenda deve rimanere visibile e cliccabile.
 
 ## Riepilogo Post-Implementazione
-*Da compilare a fine lavori*
+- **Stato:** Completato.
+- **Modifiche Effettuate:** Aggiunta la regola CSS `display: none !important;` per la classe `.iub__us-widget` nel file `assets/css/style.css`.
+- **Prossimi Passi:** L'utente verificherà live la rimozione visiva della barra testuale di Iubenda dal sito una volta terminato il deploy automatico di GitHub.
