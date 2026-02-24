@@ -27,4 +27,9 @@ Poiché il sito deriva da una precedente installazione WordPress e la vecchia ca
 3. Verificare che cliccando sui link nel footer si aprano le modali/pagine previste da Iubenda.
 
 ## Riepilogo Post-Implementazione
-*Da compilare a fine lavori*
+- **Stato:** Completato.
+- **Modifiche Effettuate:**
+  - Inserito lo script globale `embeds.iubenda.com` nell'`<head>` di ciascun file HTML per la gestione del banner cookie e del consenso.
+  - Sostituiti i vecchi link `404.html` nel footer con i codici embed ufficiali forniti per Privacy Policy e Cookie Policy in tutte le 5 pagine.
+- **Note per il cliente:** Il widget fornito gestisce automaticamente il blocco preventivo se la funzione di "Autoblocking" è attiva nel pannello di Iubenda.
+- **Prossimi Passi:** Verificare live la comparsa del banner e il corretto caricamento delle modali dai link a fondo pagina.

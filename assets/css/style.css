@@ -101,3 +101,8 @@
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
+
+/* Nascondere widget testuale extra di Iubenda (già presente icona) */
+.iub__us-widget {
+    display: none !important;
+}
