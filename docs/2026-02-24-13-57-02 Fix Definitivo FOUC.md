@@ -32,4 +32,6 @@ La classe `preload` sui vari `<body>` in giro per i file HTML rimane correttamen
 3. Test esecutivo utente: ricaricare cachettando e visualizzando il completo debellamento del disturbo visivo.
 
 ## Riepilogo Post-Implementazione
-*Da compilare a fine lavori*
+- **Stato:** Completato.
+- **Modifiche Effettuate:** Spostata la logica di rimozione della classe `preload` dall'evento `DOMContentLoaded` all'evento documentale `window.load` in testa al file `main.js`. Incapsulata l'istruzione in `requestAnimationFrame` per assicurarne l'esecuzione al termine dell'interpretazione CSS di Tailwind.
+- **Prossimi Passi:** L'utente verificherà che ricaricando le pagine lo spiacevole "sfarfallio" hover iniziale non si verifichi più.

@@ -15,34 +15,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS (via CDN for Development) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#6EC1E4',
-                        secondary: 'rgb(40, 41, 43)',
-                        accent: '#61CE70',
-                        dark: '#000000',
-                        highlight: '#FFBC7D',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Oswald', 'sans-serif'],
-                    },
-                    container: {
-                        center: true,
-                        padding: '1rem',
-                        screens: {
-                            '2xl': '1300px',
-                        },
-                    },
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS (Compiled for Production) -->
+    <link rel="stylesheet" href="assets/css/tailwind.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -56,7 +30,7 @@
         src="https://embeds.iubenda.com/widgets/5cf8544a-d00c-4bd7-b5af-70ac7e398983.js"></script>
 </head>
 
-<body class="preload font-sans text-secondary antialiased bg-gray-50 selection:bg-primary selection:text-white">
+<body class="font-sans text-secondary antialiased bg-gray-50 selection:bg-primary selection:text-white">
 
     <!-- Header -->
     <header id="site-header"

@@ -1,0 +1,27 @@
+{
+  "name": "ferri-ristrutturazioni",
+  "version": "1.0.0",
+  "description": "Sito web per Ferri Ristrutturazioni.\r Progetto statico HTML/CSS/JS con integrazione Tailwind CSS.",
+  "main": "tailwind.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drugo84-Dev/Ferri-Ristrutturazioni.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Drugo84-Dev/Ferri-Ristrutturazioni/issues"
+  },
+  "homepage": "https://github.com/Drugo84-Dev/Ferri-Ristrutturazioni#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
