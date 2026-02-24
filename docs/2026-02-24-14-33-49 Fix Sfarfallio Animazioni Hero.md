@@ -21,4 +21,9 @@ La procedura standard per forzare l'hardware acceleration e migliorare drasticam
 4. Deploy e validazione cliente.
 
 ## Riepilogo Post-Implementazione
-*Da compilare a fine lavori*
+- **Stato:** Completato.
+- **Modifiche Effettuate:**
+  - Identificata classe d'animazione `.animate-fade-in-up` / `down` responsabile dello stuttering locale.
+  - Aggiunte nel file `assets/css/style.css` 3 regole d'oro CSS hardware-accelerated: `will-change: transform, opacity;`, `backface-visibility: hidden;` e `transform-style: preserve-3d;` direttamente sulle interfacce animative.
+  - Generato deploy su ramo main.
+- **Prossimi Passi:** Il cliente verificherà personalmente la "burrosità" della comparizione e la stabilità visiva senza sfocature dei bottoni nella parte alta del sito in fase di scroll ed ingresso.

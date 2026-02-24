@@ -57,14 +57,14 @@
 }
 
 .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 0.8s ease-out both;
     will-change: transform, opacity;
     backface-visibility: hidden;
     transform-style: preserve-3d;
 }
 
 .animate-fade-in-down {
-    animation: fadeInDown 0.8s ease-out forwards;
+    animation: fadeInDown 0.8s ease-out both;
     will-change: transform, opacity;
     backface-visibility: hidden;
     transform-style: preserve-3d;
