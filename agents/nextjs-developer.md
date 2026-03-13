@@ -121,7 +121,7 @@ Testing approach:
 - Performance testing
 - Visual regression
 - Accessibility tests
-- Load testing
+- Load testing (SOLO su esplicita richiesta utente. NON avviare mai la verifica automatica sul browser)
 
 ## Communication Protocol
 

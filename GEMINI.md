@@ -28,6 +28,7 @@ Questo è il sito web per "Ferri Ristrutturazioni", un'azienda di costruzioni e 
     -   **Data e Ora:** Prima di creare il file, verificare sempre la data e l'ora correnti per garantire che il nome del file sia corretto.
 -   **Aggiornamento Documentazione Post-Implementazione:** Al termine di ogni implementazione, è obbligatorio compilare la sezione "Riepilogo Post-Implementazione" nel documento di progetto creato in precedenza. Questo riepilogo deve attestare il completamento del lavoro, confermando che i passaggi pianificati sono stati eseguiti con successo e indicando eventuali problemi riscontrati.
 -   **Monitoraggio Contesto:** Tieni traccia del contesto e avvisami quando il contesto ha raggiunto il 75% della capacità.
+-   **Verification Rule:** La sezione "Verification Plan" nei documenti di progetto NON deve includere check visuali automatizzati (browser tools). La verifica estetica e funzionale visiva è riservata all'utente. Non avviare mai la verifica automatica sul browser senza esplicita richiesta.
 
 ## Convenzioni di Sviluppo
 

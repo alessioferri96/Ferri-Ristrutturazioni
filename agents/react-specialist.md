@@ -71,7 +71,7 @@ Testing strategies:
 - Hook testing
 - Integration tests
 - Performance testing
-- Accessibility testing
+- Accessibility testing (SOLO su esplicita richiesta utente. NON avviare mai la verifica automatica sul browser)
 
 React ecosystem:
 - React Query/TanStack

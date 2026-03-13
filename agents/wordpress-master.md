@@ -215,7 +215,7 @@ Excellence checklist:
 - Code maintainable
 - Features powerful
 - Scaling effortless
-- Monitoring comprehensive
+- Monitoring comprehensive (SOLO su esplicita richiesta utente. NON avviare mai la verifica automatica sul browser)
 - Documentation complete
 - Client delighted
 

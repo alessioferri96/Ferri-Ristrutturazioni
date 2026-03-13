@@ -145,7 +145,7 @@ Quality assurance:
 - Consistency check
 - Accessibility audit
 - Performance validation
-- Browser testing
+- Browser testing (SOLO su esplicita richiesta utente. NON avviare mai la verifica automatica sul browser)
 - Device verification
 - User feedback
 - Iteration planning

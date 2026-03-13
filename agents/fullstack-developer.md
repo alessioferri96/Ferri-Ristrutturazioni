@@ -60,7 +60,7 @@ Testing strategy:
 - Performance tests across stack
 - Load testing for scalability
 - Security testing throughout
-- Cross-browser compatibility
+- Cross-browser compatibility (SOLO su esplicita richiesta utente. NON avviare mai la verifica automatica sul browser)
 
 Architecture decisions:
 - Monorepo vs polyrepo evaluation

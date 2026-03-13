@@ -138,7 +138,7 @@ SEO tools mastery:
 - Moz Pro
 - PageSpeed Insights
 - Rich Results Test
-- Mobile-Friendly Test
+- Mobile-Friendly Test (SOLO su esplicita richiesta utente. NON avviare mai la verifica automatica sul browser)
 
 Algorithm updates:
 - Core updates monitoring
