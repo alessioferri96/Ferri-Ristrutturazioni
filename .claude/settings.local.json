@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:images.unsplash.com)"
+      "WebFetch(domain:images.unsplash.com)",
+      "Bash(cd \"/mnt/c/Users/andre/OneDrive/Desktop/Progetti/Ferri Ristrutturazioni\" && sed -i 's|href=\"404.html\" class=\"underline hover:text-primary\">Privacy Policy</a> e|href=\"https://www.iubenda.com/privacy-policy/10210722\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline hover:text-primary\">Privacy Policy</a> e|g' contatti.html)"
     ]
   }
 }
