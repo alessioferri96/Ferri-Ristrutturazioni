@@ -145,8 +145,9 @@ details > summary:focus-visible {
     outline-offset: 3px;
 }
 
-/* Rimuove outline dal bottone hamburger menu (evita bordo blu persistente su mobile) */
-#mobile-menu-toggle:focus-visible {
+/* Rimuove outline da bottoni interattivi mobile (evita bordo blu persistente al tap) */
+#mobile-menu-toggle:focus-visible,
+a[aria-label="Chatta su WhatsApp"]:focus-visible {
     outline: none;
 }
 
