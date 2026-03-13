@@ -2,32 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ferriristrutturazioni.it/index.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ferriristrutturazioni.it/chi-siamo.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ferriristrutturazioni.it/servizi.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ferriristrutturazioni.it/progetti.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ferriristrutturazioni.it/contatti.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ferriristrutturazioni.it/progetto-villa-tuscolana.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ferriristrutturazioni.it/progetto-locale-frascati.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ferriristrutturazioni.it/progetto-residenza-grottaferrata.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

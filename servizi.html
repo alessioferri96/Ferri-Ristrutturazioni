@@ -47,6 +47,9 @@
 <body
     class="preload font-sans text-secondary antialiased bg-gray-50 selection:bg-primary selection:text-white overflow-x-hidden w-full relative">
 
+    <!-- Skip to Content (Accessibilità WCAG 2.2) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:uppercase focus:tracking-widest">Vai al contenuto</a>
+
     <!-- Header (Identical to Index) -->
     <header id="site-header"
         class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out bg-transparent text-white [&.scrolled]:bg-white [&.scrolled]:text-black [&.scrolled]:shadow-md group [&.menu-active]:z-[70] [&.menu-active]:!bg-transparent [&.menu-active]:!shadow-none [&.menu-active]:!transition-none">
@@ -64,7 +67,7 @@
             <div class="flex items-center gap-3 md:gap-4">
                 <button id="mobile-menu-toggle"
                     class="p-2 hover:text-primary transition-colors group relative z-[70] [&.menu-open]:text-white"
-                    aria-label="Menu">
+                    aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="transition-transform duration-300 group-hover:scale-110 md:w-9 md:h-9">
@@ -91,7 +94,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
 
         <!-- Hero Section (Strict Config from Index) -->
         <section
@@ -124,7 +127,7 @@
 
         <!-- Service 1: Ristrutturazioni Complete -->
         <section
-            class="relative min-h-0 md:min-h-[80vh] flex items-center py-16 md:py-0 bg-white border-b border-gray-100">
+            class="relative min-h-0 md:min-h-[80vh] flex items-center py-20 md:py-24 bg-white border-b border-gray-100">
             <div class="container relative z-10 grid md:grid-cols-2 gap-12 md:gap-12 lg:gap-24 items-center">
                 <!-- Image Column -->
                 <div
@@ -165,7 +168,7 @@
 
         <!-- Service 2: Impiantistica -->
         <section
-            class="relative min-h-0 md:min-h-[80vh] flex items-center py-16 md:py-0 bg-gray-50 border-b border-gray-100">
+            class="relative min-h-0 md:min-h-[80vh] flex items-center py-20 md:py-24 bg-gray-50 border-b border-gray-100">
             <div class="container relative z-10 grid md:grid-cols-2 gap-12 md:gap-12 lg:gap-24 items-center">
 
                 <!-- Text Column (Left on Desktop) -->
@@ -219,7 +222,7 @@
 
         <!-- Service 3: Interior Design -->
         <section
-            class="relative min-h-0 md:min-h-[80vh] flex items-center py-16 md:py-0 bg-white border-b border-gray-100">
+            class="relative min-h-0 md:min-h-[80vh] flex items-center py-20 md:py-24 bg-white border-b border-gray-100">
             <div class="container relative z-10 grid md:grid-cols-2 gap-12 md:gap-12 lg:gap-24 items-center">
                 <!-- Image Column -->
                 <div
@@ -265,7 +268,7 @@
         </section>
 
         <!-- Service 4: Pratiche (Compact Full Width) -->
-        <section class="py-16 md:py-24 bg-secondary text-white relative overflow-hidden">
+        <section class="py-20 md:py-24 bg-secondary text-white relative overflow-hidden">
             <!-- Background Decoration -->
             <div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-10 rounded-full blur-3xl -mt-20 -mr-20">
             </div>
@@ -299,7 +302,7 @@
         </section>
 
         <!-- Expanded FAQ Section (8 Items) -->
-        <section class="py-16 md:py-24 bg-white">
+        <section class="py-20 md:py-24 bg-white">
             <div class="container max-w-4xl mx-auto px-6">
                 <h2
                     class="font-display text-3xl md:text-4xl font-bold uppercase mb-16 text-center text-secondary tracking-widest scroll-reveal">
@@ -475,7 +478,7 @@
     <!-- Footer (Identical to Index) -->
     <footer class="bg-white text-black">
         <!-- Top Section: Contact Form & Info (Strict Scape Parallax Style) -->
-        <section id="contact-form-section" class="relative py-16 md:py-24 bg-scroll md:bg-fixed bg-center bg-cover"
+        <section id="contact-form-section" class="relative py-20 md:py-24 bg-scroll md:bg-fixed bg-center bg-cover"
             style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop');">
             <div class="absolute inset-0 bg-black/70"></div> <!-- Dark Overlay for Contrast -->
             <div class="container relative z-10">

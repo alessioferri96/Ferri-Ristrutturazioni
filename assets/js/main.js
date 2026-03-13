@@ -85,8 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start WITHOUT transition classes to prevent flash on load
     const mobileMenu = document.createElement('div');
     mobileMenu.className = 'fixed inset-0 bg-secondary z-[60] pt-24 px-6 transform translate-x-full flex flex-col items-center justify-center text-center text-white';
+    mobileMenu.id = 'mobile-menu';
+    mobileMenu.setAttribute('aria-label', 'Menu di navigazione');
     mobileMenu.innerHTML = `
-        <nav class="flex flex-col gap-6 font-display text-4xl font-bold uppercase text-white mb-12">
+        <nav class="flex flex-col gap-6 font-display text-4xl font-bold uppercase text-white mb-12" aria-label="Navigazione principale">
             <a href="index.html" class="hover:text-primary transition-colors">Home</a>
             <a href="chi-siamo.html" class="hover:text-primary transition-colors">Chi Siamo</a>
             <a href="servizi.html" class="hover:text-primary transition-colors">Servizi</a>
@@ -127,10 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (mobileMenu.classList.contains('translate-x-full')) {
             menuToggle.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
             if (header) header.classList.remove('menu-active');
             document.body.classList.remove('overflow-hidden');
         } else {
             menuToggle.classList.add('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'true');
             if (header) header.classList.add('menu-active');
             document.body.classList.add('overflow-hidden');
         }

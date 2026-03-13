@@ -49,6 +49,9 @@
 <body
     class="preload font-sans text-secondary antialiased bg-gray-50 selection:bg-primary selection:text-white overflow-x-hidden">
 
+    <!-- Skip to Content (Accessibilità WCAG 2.2) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:uppercase focus:tracking-widest">Vai al contenuto</a>
+
     <!-- Header (Identical to Home) -->
     <header id="site-header"
         class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out bg-transparent text-white [&.scrolled]:bg-white [&.scrolled]:text-black [&.scrolled]:shadow-md group [&.menu-active]:z-[70] [&.menu-active]:!bg-transparent [&.menu-active]:!shadow-none [&.menu-active]:!transition-none">
@@ -66,7 +69,7 @@
             <div class="flex items-center gap-3 md:gap-4">
                 <button id="mobile-menu-toggle"
                     class="p-2 hover:text-primary transition-colors group relative z-[70] [&.menu-open]:text-white"
-                    aria-label="Menu">
+                    aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="transition-transform duration-300 group-hover:scale-110 md:w-9 md:h-9">
@@ -94,7 +97,7 @@
     </header>
 
     <!-- Main Content: Immersive Slider -->
-    <main class="relative h-[100svh] w-full bg-secondary overflow-hidden">
+    <main id="main-content" class="relative h-[100svh] w-full bg-secondary overflow-hidden">
 
         <!-- Slider Container -->
         <div id="projects-slider" class="absolute inset-0 w-full h-full">
@@ -115,13 +118,13 @@
                             class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Residenziale</span>
                         <h1
                             class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
-                            Villa<br>Belvedere
+                            Villa<br>Tuscolana
                         </h1>
                         <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
-                            Ristrutturazione completa di una villa storica con vista lago. Recupero materiali originali
-                            e integrazione domotica avanzata.
+                            Ristrutturazione completa di una villa storica ai Castelli Romani. Recupero materiali
+                            originali e integrazione domotica avanzata.
                         </p>
-                        <a href="404.html"
+                        <a href="progetto-villa-tuscolana.html"
                             class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
                             <span
                                 class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
@@ -150,13 +153,13 @@
                             class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Commerciale</span>
                         <h1
                             class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
-                            Tech<br>Hub Milano
+                            Locale<br>Frascati
                         </h1>
                         <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
-                            Conversione di un ex capannone industriale in uffici open space. Design moderno, acustica
-                            ottimizzata e aree relax.
+                            Ristrutturazione completa di uno spazio commerciale nel centro di Frascati. Design moderno,
+                            finiture su misura e impianti a norma.
                         </p>
-                        <a href="404.html"
+                        <a href="progetto-locale-frascati.html"
                             class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
                             <span
                                 class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
@@ -185,13 +188,13 @@
                             class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Residenziale</span>
                         <h1
                             class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
-                            Loft<br>Navigli
+                            Residenza<br>Grottaferrata
                         </h1>
                         <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
                             Restyling completo di un appartamento su due livelli. Scala in ferro su misura, pareti in
-                            mattoni a vista e finiture luxury.
+                            mattoni a vista e finiture di pregio.
                         </p>
-                        <a href="404.html"
+                        <a href="progetto-residenza-grottaferrata.html"
                             class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
                             <span
                                 class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
