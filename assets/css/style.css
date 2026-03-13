@@ -145,6 +145,11 @@ details > summary:focus-visible {
     outline-offset: 3px;
 }
 
+/* Rimuove outline dal bottone hamburger menu (evita bordo blu persistente su mobile) */
+#mobile-menu-toggle:focus-visible {
+    outline: none;
+}
+
 /* Prefers Reduced Motion — disabilita animazioni per chi lo richiede */
 @media (prefers-reduced-motion: reduce) {
     *,
