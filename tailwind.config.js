@@ -11,7 +11,7 @@ module.exports = {
                 highlight: '#FFBC7D',
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
+                sans: ['Roboto', 'sans-serif'],
                 display: ['Oswald', 'sans-serif'],
             },
             container: {
