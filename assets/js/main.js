@@ -20,64 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll(); // Init Check
 
     /* =========================================
-       2. Hero Slideshow Logic
-       ========================================= */
-    const heroSection = document.getElementById('home');
-    const heroSlideshowContainer = document.getElementById('hero-slideshow');
-
-    if (heroSection && heroSlideshowContainer) {
-        try {
-            const rawSlides = heroSection.getAttribute('data-slides');
-            const slides = JSON.parse(rawSlides || '[]');
-            let currentSlide = 0;
-
-            if (slides.length > 1) {
-                // Preload all images
-                slides.forEach(src => { const img = new Image(); img.src = src; });
-
-                const slideLayer1 = heroSlideshowContainer.querySelector('div');
-                const slideLayer2 = slideLayer1.cloneNode(true);
-
-                slideLayer1.style.zIndex = 1;
-                slideLayer2.style.zIndex = 2;
-                slideLayer2.style.opacity = 0;
-
-                heroSlideshowContainer.appendChild(slideLayer2);
-
-                let isTransitioning = false;
-
-                const nextSlide = () => {
-                    if (isTransitioning) return;
-                    isTransitioning = true;
-
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    const nextImage = `url('${slides[currentSlide]}')`;
-
-                    // Always: load next into Layer2, fade it in, then swap
-                    slideLayer2.style.backgroundImage = nextImage;
-                    slideLayer2.style.opacity = 1;
-
-                    // After transition completes, copy image to Layer1 and reset Layer2
-                    setTimeout(() => {
-                        slideLayer1.style.backgroundImage = nextImage;
-                        slideLayer2.style.transition = 'none';
-                        slideLayer2.style.opacity = 0;
-                        // Force reflow then restore transition
-                        slideLayer2.offsetHeight;
-                        slideLayer2.style.transition = '';
-                        isTransitioning = false;
-                    }, 1100); // Slightly longer than CSS transition (1000ms)
-                };
-
-                setInterval(nextSlide, 5000);
-            }
-        } catch (e) {
-            console.error("Error initializing slideshow:", e);
-        }
-    }
-
-    /* =========================================
-       3. Mobile Menu Toggle
+       2. Mobile Menu Toggle
        ========================================= */
     const menuToggle = document.getElementById('mobile-menu-toggle');
 

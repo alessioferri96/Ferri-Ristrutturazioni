@@ -104,47 +104,8 @@
 
             <!-- Slide 1 -->
             <div class="slide active absolute inset-0 w-full h-full">
-                <!-- Background Image -->
                 <div class="absolute inset-0 bg-cover bg-center"
-                    style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');">
-                </div>
-                <!-- Gradient Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-
-                <!-- Content -->
-                <div class="container relative h-full flex items-center px-6 z-10">
-                    <div class="max-w-2xl slide-content">
-                        <span
-                            class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Residenziale</span>
-                        <h1
-                            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
-                            Villa<br>Tuscolana
-                        </h1>
-                        <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
-                            Ristrutturazione completa di una villa storica ai Castelli Romani. Recupero materiali
-                            originali e integrazione domotica avanzata.
-                        </p>
-                        <a href="progetto-villa-tuscolana.html"
-                            class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
-                            <span
-                                class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
-                                il Progetto</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="transform group-hover:translate-x-2 transition-transform">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="slide absolute inset-0 w-full h-full">
-                <div class="absolute inset-0 bg-cover bg-center"
-                    style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop');">
+                    style="background-image: url('assets/img/locale-frascati-hero.webp');">
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
                 <div class="container relative h-full flex items-center px-6 z-10">
@@ -176,10 +137,10 @@
                 </div>
             </div>
 
-            <!-- Slide 3 -->
+            <!-- Slide 2 -->
             <div class="slide absolute inset-0 w-full h-full">
                 <div class="absolute inset-0 bg-cover bg-center"
-                    style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop');">
+                    style="background-image: url('assets/img/residenza-grottaferrata-hero.webp');">
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
                 <div class="container relative h-full flex items-center px-6 z-10">
@@ -224,7 +185,7 @@
             </button>
             <div class="text-white font-display text-xl tracking-widest">
                 <span id="current-slide">01</span><span class="text-white/40 mx-2">/</span><span
-                    id="total-slides">03</span>
+                    id="total-slides">02</span>
             </div>
             <button id="next-slide"
                 class="text-white hover:text-primary transition-colors p-2 border border-white/20 rounded-full hover:border-primary">
@@ -240,16 +201,12 @@
             <div class="flex gap-4">
                 <button
                     class="w-20 h-16 bg-cover bg-center border-2 border-primary cursor-pointer transition-transform hover:scale-110 shadow-lg"
-                    style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=200');"
+                    style="background-image: url('assets/img/locale-frascati-hero.webp');"
                     onclick="slider.goTo(0)"></button>
                 <button
                     class="w-20 h-16 bg-cover bg-center border-2 border-transparent hover:border-primary cursor-pointer transition-transform hover:scale-110 opacity-70 hover:opacity-100 shadow-lg"
-                    style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=200');"
+                    style="background-image: url('assets/img/residenza-grottaferrata-hero.webp');"
                     onclick="slider.goTo(1)"></button>
-                <button
-                    class="w-20 h-16 bg-cover bg-center border-2 border-transparent hover:border-primary cursor-pointer transition-transform hover:scale-110 opacity-70 hover:opacity-100 shadow-lg"
-                    style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=200');"
-                    onclick="slider.goTo(2)"></button>
             </div>
         </div>
 

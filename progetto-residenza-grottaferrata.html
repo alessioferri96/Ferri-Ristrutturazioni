@@ -84,7 +84,7 @@
         <!-- Hero Full-Width -->
         <section class="relative min-h-[100svh] flex items-end overflow-hidden">
             <div class="absolute inset-0 bg-cover bg-center scale-105"
-                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop');">
+                style="background-image: url('assets/img/residenza-grottaferrata-hero.webp');">
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/50 to-black/20"></div>
             <div class="container relative z-10 pb-20 md:pb-32 px-6">
@@ -135,14 +135,16 @@
                     </div>
                     <div class="md:col-span-8">
                         <p class="font-editorial text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-white/90 mb-8">
-                            Un appartamento su due livelli che ha ritrovato la propria identità. Il progetto ha liberato
-                            gli spazi, creando un open space luminoso al piano terra.
+                            Un appartamento su due livelli trasformato da cima a fondo. Il progetto ha ridisegnato
+                            ogni superficie, dai pavimenti in gres posati a regola d'arte fino ai controsoffitti
+                            con illuminazione LED integrata.
                         </p>
                         <p class="text-white/60 leading-relaxed text-base md:text-lg font-light">
-                            La zona notte intima al piano superiore è collegata da una scala in ferro realizzata su misura.
-                            La palette cromatica gioca su toni neutri — bianco gesso, grigio cemento, nero ferro —
-                            punteggiati dal calore dei mattoni a vista originali, restaurati uno ad uno e lasciati
-                            a raccontare la storia dell'edificio.
+                            Le pareti in mattoni a vista, restaurate e valorizzate, dialogano con le finiture
+                            contemporanee degli ambienti interni. Il terrazzo è stato rivestito con pavimentazione
+                            in gres effetto legno, estendendo il comfort degli interni anche all'esterno.
+                            La palette cromatica gioca su toni neutri — bianco gesso, grigio cemento, cotto naturale —
+                            per un equilibrio tra carattere e luminosità.
                         </p>
                     </div>
                 </div>
@@ -152,7 +154,7 @@
         <!-- Full-Width Image -->
         <section class="relative h-[50vh] sm:h-[60vh] md:h-[90vh] overflow-hidden">
             <div class="absolute inset-0 bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2074&auto=format&fit=crop');">
+                style="background-image: url('assets/img/residenza-grottaferrata.webp');">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-40"></div>
         </section>
@@ -166,61 +168,116 @@
                         <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-6">I Dettagli</span>
                         <h2
                             class="font-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[0.9] mb-6 sm:mb-8">
-                            Il Ferro Come<br>Firma d'Autore
+                            Materia Viva,<br>Luce Pensata
                         </h2>
                         <p class="text-white/60 leading-relaxed mb-4">
-                            La scala a giorno in ferro brunito è il cuore del progetto: una struttura leggera
-                            che attraversa il doppio volume come una scultura, con gradini in rovere massello
-                            e ringhiera minimale a filo.
+                            Il corridoio d'ingresso racconta l'anima del progetto: una parete in mattoni
+                            a vista che corre lungo tutto il percorso, accostata a pavimentazione in gres
+                            porcellanato effetto pietra dai toni neutri e luminosi.
                         </p>
                         <p class="text-white/60 leading-relaxed">
-                            Al piano superiore, la suite padronale si apre su un terrazzo privato con vista
-                            sui Castelli. Il bagno en-suite, rivestito in resina cementizia e gres porcellanato
-                            effetto pietra, completa l'esperienza di un living contemporaneo senza compromessi.
+                            Il controsoffitto ribassato con illuminazione LED perimetrale crea un gioco
+                            di volumi e luce diffusa che accompagna lo sguardo verso gli ambienti interni,
+                            dove la luce naturale delle ampie vetrate dialoga con le finiture contemporanee.
                         </p>
                     </div>
                     <div class="relative h-[300px] sm:h-[400px] md:h-[650px] overflow-hidden">
                         <div class="absolute inset-0 bg-cover bg-center"
-                            style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2070&auto=format&fit=crop');">
+                            style="background-image: url('assets/img/residenza-grottaferrata-dettagli.webp');">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Image Grid -->
-        <section class="py-4 md:py-6 bg-[#0a0a0a]">
+        <!-- Image Gallery -->
+        <section class="py-10 md:py-16 bg-[#0a0a0a]">
             <div class="container max-w-7xl mx-auto px-4 md:px-6">
-                <div class="grid grid-cols-2 gap-2 md:gap-3">
-                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group">
+                <div class="text-center mb-8 md:mb-12">
+                    <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
+                    <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-4">Gallery</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
+                        Il Cantiere in Immagini
+                    </h2>
+                </div>
+                <div class="grid grid-cols-2 gap-2 md:gap-3" id="gallery-grid">
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="0">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                            style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop');">
+                            style="background-image: url('assets/img/residenza-grottaferrata-grid1.webp');">
                         </div>
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
-                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group">
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="1">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                            style="background-image: url('https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2070&auto=format&fit=crop');">
+                            style="background-image: url('assets/img/residenza-grottaferrata-grid2.webp');">
                         </div>
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
-                    <div class="col-span-2 relative h-[200px] sm:h-[300px] md:h-[550px] overflow-hidden group">
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="2">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                            style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop');">
+                            style="background-image: url('assets/img/residenza-grottaferrata-grid3.webp');">
+                        </div>
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
+                    </div>
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="3">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                            style="background-image: url('assets/img/residenza-grottaferrata-grid4.webp');">
                         </div>
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" aria-hidden="true"
+            style="display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.95); align-items:center; justify-content:center;">
+
+            <!-- Pulsante chiudi — sempre in alto a destra -->
+            <button id="lightbox-close" style="position:absolute; top:16px; right:16px; z-index:110; background:none; border:none; cursor:pointer; color:rgba(255,255,255,0.6); transition:color 0.3s; padding:8px;" aria-label="Chiudi"
+                onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Container immagine + navigazione -->
+            <div id="lightbox-container" style="position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:60px 16px 60px 16px;">
+
+                <!-- Freccia sinistra — overlay -->
+                <button id="lightbox-prev" style="position:absolute; left:8px; top:50%; transform:translateY(-50%); z-index:105; background:rgba(0,0,0,0.3); border:none; cursor:pointer; color:rgba(255,255,255,0.5); transition:color 0.3s, background 0.3s; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center;" aria-label="Immagine precedente"
+                    onmouseover="this.style.color='#fff';this.style.background='rgba(0,0,0,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.3)'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Immagine -->
+                <img id="lightbox-img" src="" alt="Gallery image"
+                    style="max-width:100%; max-height:100%; object-fit:contain; display:block; transition:opacity 0.3s; user-select:none; -webkit-user-select:none;">
+
+                <!-- Freccia destra — overlay -->
+                <button id="lightbox-next" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); z-index:105; background:rgba(0,0,0,0.3); border:none; cursor:pointer; color:rgba(255,255,255,0.5); transition:color 0.3s, background 0.3s; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center;" aria-label="Immagine successiva"
+                    onmouseover="this.style.color='#fff';this.style.background='rgba(0,0,0,0.6)'" onmouseout="this.style.color='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.3)'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Counter — in basso al centro -->
+            <div style="position:absolute; bottom:20px; left:0; right:0; text-align:center; color:rgba(255,255,255,0.35); font-size:12px; letter-spacing:0.2em; font-family:Inter,sans-serif; pointer-events:none;">
+                <span id="lightbox-counter"></span>
+            </div>
+        </div>
 
         <!-- Quote -->
         <section class="py-16 sm:py-24 md:py-36 bg-[#0a0a0a] border-y border-white/5">
             <div class="container max-w-4xl mx-auto px-6 text-center">
-                <div class="text-primary text-6xl sm:text-8xl md:text-9xl font-editorial leading-none mb-6 sm:mb-8">&ldquo;</div>
-                <p class="font-editorial text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light leading-snug italic text-white/80 mb-8 sm:mb-10 -mt-8 sm:-mt-12 md:-mt-16">
-                    La scala in ferro è diventata il pezzo forte della casa. Ogni ospite resta a guardarla.
-                    Non pensavamo che una ristrutturazione potesse cambiare così tanto il modo di vivere uno spazio.
+                <p class="font-editorial text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light leading-snug italic text-white/80 mb-8 sm:mb-10">
+                    <span class="text-primary font-editorial not-italic mr-3">&ldquo;</span> I mattoni a vista e le luci nel controsoffitto hanno dato un carattere unico a ogni stanza.
+                    Non pensavamo che una ristrutturazione potesse cambiare così tanto il modo di vivere uno spazio.<span class="text-primary font-editorial not-italic ml-2">&rdquo;</span>
                 </p>
                 <div class="flex items-center justify-center gap-4">
                     <div class="w-8 h-px bg-primary"></div>
@@ -234,9 +291,9 @@
         <section class="py-16 sm:py-24 md:py-36 bg-[#0a0a0a] group/next">
             <div class="container max-w-5xl mx-auto px-6 text-center">
                 <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-6">Progetto Successivo</span>
-                <a href="progetto-villa-tuscolana.html"
+                <a href="progetto-locale-frascati.html"
                     class="font-editorial text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light text-white/20 hover:text-white transition-colors duration-700 leading-[0.85] inline-block">
-                    Villa<br>Tuscolana
+                    Locale<br>Frascati
                 </a>
                 <div class="mt-8">
                     <div class="w-12 h-px bg-white/10 mx-auto group-hover/next:w-24 group-hover/next:bg-primary/50 transition-all duration-700"></div>
@@ -316,6 +373,130 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+
+    <!-- Lightbox Script -->
+    <script>
+    (function() {
+        const galleryImages = [
+            'assets/img/residenza-grottaferrata-grid1.webp',
+            'assets/img/residenza-grottaferrata-grid2.webp',
+            'assets/img/residenza-grottaferrata-grid3.webp',
+            'assets/img/residenza-grottaferrata-grid4.webp',
+            'assets/img/residenza-lb-app1.webp',
+            'assets/img/residenza-lb-app2.webp',
+            'assets/img/residenza-lb-app3.webp',
+            'assets/img/residenza-lb-app4.webp',
+            'assets/img/residenza-lb-app5.webp',
+            'assets/img/residenza-lb-app6.webp',
+            'assets/img/residenza-lb-app7.webp',
+            'assets/img/residenza-lb-app8.webp',
+            'assets/img/residenza-lb-app9.webp',
+            'assets/img/residenza-lb-bagno1.webp',
+            'assets/img/residenza-lb-bagno2.webp',
+            'assets/img/residenza-lb-bagno3.webp',
+            'assets/img/residenza-lb-bagno4.webp',
+            'assets/img/residenza-lb-bagno5.webp',
+            'assets/img/residenza-lb-bagno6.webp',
+            'assets/img/residenza-lb-bagno7.webp',
+            'assets/img/residenza-lb-bagno8.webp'
+        ];
+
+        let currentIndex = 0;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.style.display = 'flex';
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightbox() {
+            lightboxImg.style.opacity = 0;
+            setTimeout(function() {
+                lightboxImg.src = galleryImages[currentIndex];
+                lightboxImg.style.opacity = 1;
+            }, 150);
+            lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            updateLightbox();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+        }
+
+        document.querySelectorAll('.gallery-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                openLightbox(parseInt(this.getAttribute('data-index')));
+            });
+        });
+
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.getElementById('lightbox-next').addEventListener('click', nextImage);
+        document.getElementById('lightbox-prev').addEventListener('click', prevImage);
+
+        // Chiudi cliccando sullo sfondo (non sull'immagine o bottoni)
+        document.getElementById('lightbox-container').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // Keyboard
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.style.display === 'none' || !lightbox.style.display) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Touch swipe
+        (function() {
+            var touchStartX = 0;
+            var touchStartY = 0;
+            var touchEndX = 0;
+            var touchEndY = 0;
+            var swiping = false;
+
+            lightbox.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+                swiping = true;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', function(e) {
+                if (!swiping) return;
+                swiping = false;
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                var dx = touchEndX - touchStartX;
+                var dy = touchEndY - touchStartY;
+                // Swipe orizzontale (minimo 50px, e più largo che alto)
+                if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+                    if (dx < 0) nextImage();
+                    else prevImage();
+                }
+                // Swipe verso il basso per chiudere (minimo 80px)
+                if (dy > 80 && Math.abs(dy) > Math.abs(dx)) {
+                    closeLightbox();
+                }
+            }, { passive: true });
+        })();
+    })();
+    </script>
+
     <!-- Sticky WhatsApp Button (Mobile Only) -->
     <a href="https://wa.me/391234567890" target="_blank" rel="noopener noreferrer"
         class="fixed bottom-6 left-5 z-50 md:hidden bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
