@@ -4,16 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <title>Chi Siamo | Ferri Ristrutturazioni</title>
     <meta name="description"
         content="Ferri Ristrutturazioni: due fratelli e il loro padre, tre generazioni nel settore edilizio ai Castelli Romani. Ristrutturazioni residenziali e commerciali seguite di persona.">
+    <link rel="canonical" href="https://www.ferriristrutturazioni.com/chi-siamo.html">
+    <link rel="preload" as="image" href="assets/img/hero-chi-siamo.webp">
+    <meta property="og:title" content="Chi Siamo | Ferri Ristrutturazioni">
+    <meta property="og:description" content="Ferri Ristrutturazioni: due fratelli e il loro padre, tre generazioni nel settore edilizio ai Castelli Romani. Ristrutturazioni residenziali e commerciali seguite di persona.">
+    <meta property="og:url" content="https://www.ferriristrutturazioni.com/chi-siamo.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Ferri Ristrutturazioni">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Google Fonts: Oswald & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <!-- Self-hosted Fonts -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
 
     <!-- Tailwind CSS (Compiled for Production) -->
     <link rel="stylesheet" href="assets/css/tailwind.css">
@@ -62,7 +70,7 @@
                         </line>
                     </svg>
                 </button>
-                <a href="https://wa.me/391234567890" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/393428556117" target="_blank" rel="noopener noreferrer"
                     class="hidden"
                     aria-label="Chatta su WhatsApp">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#25D366">
@@ -80,15 +88,16 @@
         <section
             class="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-secondary text-white">
             <div class="absolute inset-0 bg-cover bg-center"
-                style="background-image: url('https://images.pexels.com/photos/27873253/pexels-photo-27873253.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2');">
+                style="background-image: url('assets/img/hero-chi-siamo.webp');"
+                role="img" aria-label="Operai al lavoro in un cantiere edile">
             </div>
             <div class="absolute inset-0 bg-black/50 z-10"></div>
 
             <div class="container relative z-20 text-center pt-20 px-6">
-                <h2
-                    class="text-xs md:text-base font-bold tracking-[0.3em] uppercase mb-4 text-primary animate-fade-in-down">
+                <span
+                    class="text-xs md:text-base font-bold tracking-[0.3em] uppercase mb-4 text-primary animate-fade-in-down block">
                     Chi Siamo
-                </h2>
+                </span>
                 <h1
                     class="font-display font-bold text-5xl md:text-8xl uppercase tracking-tighter mb-8 animate-fade-in-up leading-none">
                     Tre Generazioni, <br /><span
@@ -117,9 +126,10 @@
                 <div class="grid md:grid-cols-12 gap-12 items-center mb-32">
                     <div class="md:col-span-5 relative scroll-reveal">
                         <div class="aspect-[3/4] overflow-hidden shadow-2xl">
-                            <img src="https://images.pexels.com/photos/5799050/pexels-photo-5799050.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2"
+                            <img src="assets/img/chi-siamo-utensili.webp"
                                 alt="Utensili da cantiere Ferri Ristrutturazioni"
-                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                                loading="lazy" width="800" height="1067">
                         </div>
                         <!-- Floating Badge -->
                         <div
@@ -215,9 +225,10 @@
                     <div class="md:col-span-6 md:col-start-8 order-1 md:order-2 scroll-reveal">
                         <div class="aspect-square relative overflow-hidden shadow-2xl">
                             <div class="absolute inset-4 border border-white/50 z-10"></div>
-                            <img src="https://images.pexels.com/photos/7937319/pexels-photo-7937319.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2"
+                            <img src="assets/img/chi-siamo-casco.webp"
                                 alt="Casco e documenti di progetto"
-                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                loading="lazy" width="800" height="800">
                         </div>
                     </div>
                 </div>
@@ -291,9 +302,10 @@
                                     <!-- Inner for Reveal Animation -->
                                     <div
                                         class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 grayscale hover:grayscale-0">
-                                        <img src="https://images.pexels.com/photos/25596147/pexels-photo-25596147.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2"
+                                        <img src="assets/img/chi-siamo-artigiano.webp"
                                             alt="Artigiano al lavoro"
-                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover">
+                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover"
+                                            loading="lazy" width="800" height="1067">
                                     </div>
                                 </div>
                             </div>
@@ -311,9 +323,10 @@
                                     <!-- Inner for Reveal Animation -->
                                     <div
                                         class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 grayscale hover:grayscale-0">
-                                        <img src="https://images.pexels.com/photos/11398216/pexels-photo-11398216.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2"
+                                        <img src="assets/img/chi-siamo-utensili-lavoro.webp"
                                             alt="Utensili da lavoro"
-                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover">
+                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover"
+                                            loading="lazy" width="800" height="1067">
                                     </div>
                                 </div>
                             </div>
@@ -357,9 +370,10 @@
                                     <!-- Inner for Reveal Animation -->
                                     <div
                                         class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200 saturate-50 hover:saturate-100">
-                                        <img src="https://images.pexels.com/photos/7653971/pexels-photo-7653971.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2"
+                                        <img src="assets/img/chi-siamo-stretta-mano.webp"
                                             alt="Stretta di mano tra colleghi"
-                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover">
+                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover"
+                                            loading="lazy" width="800" height="1067">
                                     </div>
                                 </div>
                             </div>
@@ -377,9 +391,10 @@
                                     <!-- Inner for Reveal Animation -->
                                     <div
                                         class="timeline-content opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200">
-                                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2072&auto=format&fit=crop"
+                                        <img src="assets/img/hero-servizi.webp"
                                             alt="Ferri Ristrutturazioni oggi"
-                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover">
+                                            class="shadow-xl rounded-sm border-4 border-white w-full h-full object-cover"
+                                            loading="lazy" width="800" height="1067">
                                     </div>
                                 </div>
                             </div>
@@ -407,7 +422,8 @@
     <footer class="bg-white text-black border-t border-gray-200">
         <!-- Top Section: Contact Form & Info (Strict Scape Parallax Style) -->
         <section id="contact-form-section" class="relative py-24 bg-scroll md:bg-fixed bg-center bg-cover"
-            style="background-image: url('https://images.pexels.com/photos/1209962/pexels-photo-1209962.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2');">
+            style="background-image: url('assets/img/bg-contatti.webp');"
+            role="img" aria-label="Ambiente moderno ristrutturato con finiture di pregio">
             <div class="absolute inset-0 bg-black/70"></div> <!-- Dark Overlay for Contrast -->
             <div class="container relative z-10">
                 <div class="max-w-4xl mx-auto text-center mb-16 scroll-reveal">
@@ -424,31 +440,31 @@
                         <div class="grid md:grid-cols-2 gap-12">
                             <div class="relative group">
                                 <label class="sr-only" for="name">Nome</label>
-                                <input type="text" id="name"
+                                <input type="text" id="name" name="name" required
                                     class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
                                     placeholder="Nome">
                             </div>
                             <div class="relative group">
                                 <label class="sr-only" for="phone">Telefono</label>
-                                <input type="text" id="phone"
+                                <input type="text" id="phone" name="phone"
                                     class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
                                     placeholder="Telefono">
                             </div>
                         </div>
                         <div class="relative group">
                             <label class="sr-only" for="email">Email</label>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name="email" required
                                 class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
                                 placeholder="Indirizzo Email">
                         </div>
                         <div class="relative group">
                             <label class="sr-only" for="message">Messaggio</label>
-                            <textarea id="message"
+                            <textarea id="message" name="message" required
                                 class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors resize-none text-lg"
                                 rows="2" placeholder="Come possiamo aiutarti?"></textarea>
                         </div>
                         <div class="relative group flex items-start gap-3 mt-4 text-left">
-                            <input type="checkbox" id="privacy-footer"
+                            <input type="checkbox" id="privacy-footer" name="privacy" required
                                 class="mt-1 w-4 h-4 appearance-none border border-white/50 checked:bg-white checked:border-white transition-colors cursor-pointer relative after:content-['✓'] after:absolute after:text-secondary after:text-xs after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 checked:after:opacity-100">
                             <label for="privacy-footer"
                                 class="text-sm text-gray-300 font-light leading-tight cursor-pointer select-none">
@@ -490,7 +506,7 @@
                 </nav>
                 <!-- CTA -->
                 <div>
-                    <a href="tel:+391234567890"
+                    <a href="tel:+393428556117"
                         class="inline-block group relative border border-black px-6 py-3 font-bold uppercase text-xs tracking-widest overflow-hidden hover:text-white transition-colors bg-transparent text-black">
                         <span
                             class="absolute inset-0 w-full h-full bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
@@ -505,18 +521,18 @@
             <div class="container flex flex-wrap justify-center items-center gap-12 opacity-80">
                 <div
                     class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-gray-400 text-xl">SSIP</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Safety<br>Schemes</div>
+                    <div class="font-bold text-gray-400 text-xl">SOA</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Attestazione<br>Qualificazione</div>
                 </div>
                 <div
                     class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-gray-400 text-xl">ISO</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">9001<br>14001</div>
+                    <div class="font-bold text-gray-400 text-xl">DURC</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Regolarità<br>Contributiva</div>
                 </div>
                 <div
                     class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-gray-400 text-xl">Safe</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Contractor<br>Approved
+                    <div class="font-bold text-gray-400 text-xl">CEI</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Conformità<br>Impianti
                     </div>
                 </div>
             </div>
@@ -564,7 +580,7 @@
 
     <script src="assets/js/main.js"></script>
     <!-- Sticky WhatsApp Button (Mobile Only) -->
-    <a href="https://wa.me/391234567890" target="_blank" rel="noopener noreferrer"
+    <a href="https://wa.me/393428556117" target="_blank" rel="noopener noreferrer"
         class="fixed bottom-6 left-5 z-50 md:hidden bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="Chatta su WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">

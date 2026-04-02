@@ -4,16 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferri Ristrutturazioni | Costruiamo il tuo Futuro</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <title>Ferri Ristrutturazioni | Ristrutturazioni Castelli Romani e Frascati</title>
     <meta name="description"
-        content="Ristrutturazioni edili di alta qualità. Trasformiamo i tuoi spazi con professionalità e design industriale.">
+        content="Impresa edile familiare ai Castelli Romani. Ristrutturazioni residenziali e commerciali a Frascati e dintorni. Tre generazioni di esperienza, preventivo gratuito.">
+    <link rel="canonical" href="https://www.ferriristrutturazioni.com/">
+    <link rel="preload" as="image" href="assets/img/hero-index.webp">
+    <meta property="og:title" content="Ferri Ristrutturazioni | Ristrutturazioni Castelli Romani e Frascati">
+    <meta property="og:description" content="Impresa edile familiare ai Castelli Romani. Ristrutturazioni residenziali e commerciali a Frascati e dintorni. Tre generazioni di esperienza, preventivo gratuito.">
+    <meta property="og:url" content="https://www.ferriristrutturazioni.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Ferri Ristrutturazioni">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Google Fonts: Oswald (Alternative to Lemon Milk) & Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <!-- Self-hosted Fonts -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
 
     <!-- Tailwind CSS (Compiled for Production) -->
     <link rel="stylesheet" href="assets/css/tailwind.css">
@@ -24,6 +32,28 @@
     <!-- Iubenda Cookie Solution -->
     <script type="text/javascript"
         src="https://embeds.iubenda.com/widgets/5cf8544a-d00c-4bd7-b5af-70ac7e398983.js"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ferri Ristrutturazioni",
+      "url": "https://www.ferriristrutturazioni.com",
+      "telephone": "+393428556117",
+      "email": "info@ferriristrutturazioni.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Frascati",
+        "addressRegion": "RM",
+        "addressCountry": "IT"
+      },
+      "areaServed": "Castelli Romani",
+      "description": "Impresa edile familiare ai Castelli Romani. Ristrutturazioni residenziali e commerciali, impiantistica, restauro edilizio.",
+      "priceRange": "€€",
+      "knowsAbout": ["Ristrutturazioni", "Impiantistica", "Restauro edilizio", "Pratiche edilizie"]
+    }
+    </script>
 </head>
 
 <body class="font-sans text-secondary antialiased bg-gray-50 selection:bg-primary selection:text-white">
@@ -62,7 +92,7 @@
                         </line>
                     </svg>
                 </button>
-                <a href="https://wa.me/391234567890" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/393428556117" target="_blank" rel="noopener noreferrer"
                     class="hidden"
                     aria-label="Chatta su WhatsApp">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#25D366">
@@ -83,7 +113,8 @@
 
             <!-- Hero Background -->
             <div class="absolute inset-0 z-0 bg-cover bg-center"
-                style="background-image: url('https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=2070&auto=format&fit=crop');">
+                style="background-image: url('assets/img/hero-index.webp');"
+                role="img" aria-label="Cantiere di ristrutturazione edile in corso">
             </div>
 
             <!-- Overlay -->
@@ -91,10 +122,10 @@
 
             <!-- Content -->
             <div class="container relative z-20 text-center pt-20 px-6">
-                <h2
-                    class="text-xs md:text-base font-bold tracking-[0.3em] uppercase mb-4 text-primary animate-fade-in-down">
+                <span
+                    class="text-xs md:text-base font-bold tracking-[0.3em] uppercase mb-4 text-primary animate-fade-in-down block">
                     Ristrutturazioni su Misura ai Castelli Romani
-                </h2>
+                </span>
                 <h1
                     class="font-display font-bold text-5xl md:text-8xl uppercase tracking-tighter mb-8 animate-fade-in-up leading-none">
                     IL TUO SPAZIO<br />LA NOSTRA FIRMA
@@ -370,7 +401,8 @@
                         class="group relative h-[500px] w-full overflow-hidden bg-gray-900 scroll-reveal cursor-pointer block">
                         <!-- Background Image -->
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            style="background-image: url('assets/img/locale-frascati.webp');">
+                            style="background-image: url('assets/img/locale-frascati.webp');"
+                            role="img" aria-label="Locale commerciale ristrutturato a Frascati">
                         </div>
                         <!-- Overlay -->
                         <div
@@ -392,10 +424,11 @@
                     </a>
 
                     <!-- Project Card 2 -->
-                    <a href="progetto-residenza-grottaferrata.html"
+                    <a href="progetto-appartamento-frascati.html"
                         class="group relative h-[500px] w-full overflow-hidden bg-gray-900 scroll-reveal cursor-pointer block">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            style="background-image: url('assets/img/residenza-grottaferrata.webp');">
+                            style="background-image: url('assets/img/residenza-grottaferrata.webp');"
+                            role="img" aria-label="Appartamento ristrutturato a Frascati">
                         </div>
                         <div
                             class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
@@ -417,7 +450,7 @@
                 </div>
 
                 <div class="text-center mt-12">
-                    <a href="#progetti"
+                    <a href="progetti.html"
                         class="inline-block group relative border border-black px-8 py-3 text-sm font-bold uppercase tracking-widest overflow-hidden hover:text-white transition-colors">
                         <span
                             class="absolute inset-0 w-full h-full bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
@@ -432,14 +465,15 @@
     <footer class="bg-white text-black">
         <!-- Top Section: Contact Form & Info (Strict Scape Parallax Style) -->
         <section id="contact-form-section" class="relative py-24 bg-scroll md:bg-fixed bg-center bg-cover"
-            style="background-image: url('https://images.pexels.com/photos/1209962/pexels-photo-1209962.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=2');">
+            style="background-image: url('assets/img/bg-contatti.webp');"
+            role="img" aria-label="Ambiente moderno ristrutturato con finiture di pregio">
             <div class="absolute inset-0 bg-black/70"></div> <!-- Dark Overlay for Contrast -->
             <div class="container relative z-10">
                 <div class="max-w-4xl mx-auto text-center mb-16 scroll-reveal">
                     <h3 class="font-display text-5xl font-bold uppercase mb-8 tracking-widest text-white">Contatti</h3>
                     <p class="text-gray-200 text-xl leading-relaxed font-light max-w-2xl mx-auto">
-                        Mettiamo in campo vasta esperienza e competenza. Per noi è fondamentale che tu possa contare su
-                        di noi in ogni fase del processo e oltre.
+                        Portiamo in ogni progetto oltre sessant'anni di esperienza concreta. Per noi è importante
+                        che tu possa contare su di noi dall'inizio alla fine, e anche dopo.
                     </p>
                 </div>
 
@@ -448,31 +482,31 @@
                         <div class="grid md:grid-cols-2 gap-12">
                             <div class="relative group">
                                 <label class="sr-only" for="name">Nome</label>
-                                <input type="text" id="name"
+                                <input type="text" id="name" name="name" required
                                     class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
                                     placeholder="Nome">
                             </div>
                             <div class="relative group">
                                 <label class="sr-only" for="phone">Telefono</label>
-                                <input type="text" id="phone"
+                                <input type="text" id="phone" name="phone"
                                     class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
                                     placeholder="Telefono">
                             </div>
                         </div>
                         <div class="relative group">
                             <label class="sr-only" for="email">Email</label>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name="email" required
                                 class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
                                 placeholder="Indirizzo Email">
                         </div>
                         <div class="relative group">
                             <label class="sr-only" for="message">Messaggio</label>
-                            <textarea id="message"
+                            <textarea id="message" name="message" required
                                 class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors resize-none text-lg"
                                 rows="2" placeholder="Come possiamo aiutarti?"></textarea>
                         </div>
                         <div class="relative group flex items-start gap-3 mt-4 text-left">
-                            <input type="checkbox" id="privacy-footer"
+                            <input type="checkbox" id="privacy-footer" name="privacy" required
                                 class="mt-1 w-4 h-4 appearance-none border border-white/50 checked:bg-white checked:border-white transition-colors cursor-pointer relative after:content-['✓'] after:absolute after:text-secondary after:text-xs after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 checked:after:opacity-100">
                             <label for="privacy-footer"
                                 class="text-sm text-gray-300 font-light leading-tight cursor-pointer select-none">
@@ -515,7 +549,7 @@
                 </nav>
                 <!-- CTA -->
                 <div>
-                    <a href="tel:+391234567890"
+                    <a href="tel:+393428556117"
                         class="inline-block group relative border border-black px-6 py-3 font-bold uppercase text-xs tracking-widest overflow-hidden hover:text-white transition-colors bg-transparent text-black">
                         <span
                             class="absolute inset-0 w-full h-full bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
@@ -530,18 +564,18 @@
             <div class="container flex flex-wrap justify-center items-center gap-12 opacity-80">
                 <div
                     class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-gray-400 text-xl">SSIP</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Safety<br>Schemes</div>
+                    <div class="font-bold text-gray-400 text-xl">SOA</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Attestazione<br>Qualificazione</div>
                 </div>
                 <div
                     class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-gray-400 text-xl">ISO</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">9001<br>14001</div>
+                    <div class="font-bold text-gray-400 text-xl">DURC</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Regolarità<br>Contributiva</div>
                 </div>
                 <div
                     class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-gray-400 text-xl">Safe</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Contractor<br>Approved
+                    <div class="font-bold text-gray-400 text-xl">CEI</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Conformità<br>Impianti
                     </div>
                 </div>
             </div>
@@ -589,7 +623,7 @@
 
     <script src="assets/js/main.js"></script>
     <!-- Sticky WhatsApp Button (Mobile Only) -->
-    <a href="https://wa.me/391234567890" target="_blank" rel="noopener noreferrer"
+    <a href="https://wa.me/393428556117" target="_blank" rel="noopener noreferrer"
         class="fixed bottom-6 left-5 z-50 md:hidden bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="Chatta su WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
