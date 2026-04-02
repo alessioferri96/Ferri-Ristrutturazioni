@@ -24,6 +24,9 @@
     <!-- Editorial Font Class -->
     <style>
         .font-editorial { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+        .img-enhance { filter: contrast(1.08) saturate(1.12) brightness(1.03); }
+        .img-enhance-gallery { filter: contrast(1.08) saturate(1.12) brightness(1.03); transition: filter 0.7s ease, transform 1s ease; }
+        .group:hover .img-enhance-gallery { filter: contrast(1) saturate(1) brightness(1); }
     </style>
 
     <!-- Iubenda Cookie Solution -->
@@ -135,16 +138,16 @@
                     </div>
                     <div class="md:col-span-8">
                         <p class="font-editorial text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-white/90 mb-8">
-                            Un fondo storico nel centro di Frascati, riportato alla luce attraverso un intervento
-                            che ne ha svelato l'anima: murature in pietra locale, archi originali e volumi nascosti
-                            da decenni di stratificazioni.
+                            Un fondo storico nel centro di Frascati, riportato alla luce dopo anni di abbandono.
+                            Abbiamo tolto tutto quello che c'era sopra e sotto è venuto fuori il bello: murature
+                            in pietra locale, archi originali e volumi che nessuno ricordava più.
                         </p>
                         <p class="text-white/60 leading-relaxed text-base md:text-lg font-light">
-                            L'intervento ha previsto lo svuotamento completo degli interni, il consolidamento
-                            strutturale delle pareti in pietra e la realizzazione di un soppalco con struttura
-                            portante in acciaio e solaio in lamiera grecata. Il tetto è stato ricostruito con
-                            tavolato in legno massello su travi in ferro, creando un dialogo materico tra
-                            la solidità della pietra antica e la precisione dell'acciaio contemporaneo.
+                            Siamo partiti dallo svuotamento completo degli interni, poi abbiamo consolidato
+                            le pareti in pietra e costruito un soppalco con struttura portante in acciaio e solaio
+                            in lamiera grecata. Il tetto è stato rifatto da zero: tavolato in legno massello
+                            appoggiato su travi in ferro. Il risultato è uno spazio dove la pietra vecchia di
+                            secoli lavora insieme all'acciaio, e si vede che funziona.
                         </p>
                     </div>
                 </div>
@@ -153,7 +156,7 @@
 
         <!-- Full-Width Image -->
         <section class="relative h-[50vh] sm:h-[60vh] md:h-[90vh] overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center"
+            <div class="absolute inset-0 bg-cover bg-center img-enhance"
                 style="background-image: url('assets/img/locale-frascati-fullwidth.webp');">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-40"></div>
@@ -164,7 +167,7 @@
             <div class="container max-w-6xl mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
                     <div class="relative h-[300px] sm:h-[400px] md:h-[650px] overflow-hidden order-2 md:order-1">
-                        <div class="absolute inset-0 bg-cover bg-center"
+                        <div class="absolute inset-0 bg-cover bg-center img-enhance"
                             style="background-image: url('assets/img/locale-frascati-dettagli.webp');">
                         </div>
                     </div>
@@ -177,14 +180,14 @@
                         </h2>
                         <p class="text-white/60 leading-relaxed mb-4">
                             Le murature originali in pietra locale sono state consolidate e lasciate a vista,
-                            diventando l'elemento caratterizzante dello spazio. Un soppalco con struttura
-                            portante in ferro e copertura in legno crea un secondo livello funzionale
-                            che moltiplica la superficie utile.
+                            sono loro il vero protagonista di questo spazio. Il soppalco in ferro con copertura
+                            in legno aggiunge un secondo livello funzionale e raddoppia la superficie utile
+                            senza appesantire niente.
                         </p>
                         <p class="text-white/60 leading-relaxed">
-                            L'intervento strutturale — travi in acciaio, solaio in lamiera grecata e ringhiere
-                            minimali — si innesta nella costruzione storica con un linguaggio contemporaneo
-                            che ne rispetta il carattere, esaltando il contrasto tra antico e moderno.
+                            Travi in acciaio, solaio in lamiera grecata, ringhiere essenziali: tutto
+                            l'intervento strutturale è pensato per entrare nella costruzione storica senza
+                            sovrastarla. Il ferro e la pietra hanno due età diverse, ma qui stanno bene insieme.
                         </p>
                     </div>
                 </div>
@@ -203,25 +206,25 @@
                 </div>
                 <div class="grid grid-cols-2 gap-2 md:gap-3" id="gallery-grid">
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="0">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
                             style="background-image: url('assets/img/locale-frascati-grid1.webp');">
                         </div>
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="1">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
                             style="background-image: url('assets/img/locale-frascati-grid2.webp');">
                         </div>
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="2">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
                             style="background-image: url('assets/img/locale-frascati-grid3.webp');">
                         </div>
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="3">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
                             style="background-image: url('assets/img/locale-frascati-grid4.webp');">
                         </div>
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
@@ -256,7 +259,7 @@
 
                 <!-- Immagine -->
                 <img id="lightbox-img" src="" alt="Gallery image"
-                    style="max-width:100%; max-height:100%; object-fit:contain; display:block; transition:opacity 0.3s; user-select:none; -webkit-user-select:none;">
+                    style="max-width:100%; max-height:100%; object-fit:contain; display:block; transition:opacity 0.3s; user-select:none; -webkit-user-select:none; filter: contrast(1.08) saturate(1.12) brightness(1.03);">
 
                 <!-- Freccia destra — overlay -->
                 <button id="lightbox-next" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); z-index:105; background:rgba(0,0,0,0.3); border:none; cursor:pointer; color:rgba(255,255,255,0.5); transition:color 0.3s, background 0.3s; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center;" aria-label="Immagine successiva"
@@ -279,7 +282,7 @@
                 <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-6">Progetto Successivo</span>
                 <a href="progetto-residenza-grottaferrata.html"
                     class="font-editorial text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light text-white/20 hover:text-white transition-colors duration-700 leading-[0.85] inline-block">
-                    Residenza<br>Grottaferrata
+                    Appartamento<br>a Frascati
                 </a>
                 <div class="mt-8">
                     <div class="w-12 h-px bg-white/10 mx-auto group-hover/next:w-24 group-hover/next:bg-primary/50 transition-all duration-700"></div>
