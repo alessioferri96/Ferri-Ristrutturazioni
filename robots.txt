@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ferriristrutturazioni.it/sitemap.xml
+Sitemap: https://www.ferriristrutturazioni.com/sitemap.xml

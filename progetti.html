@@ -18,7 +18,10 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="it_IT">
     <meta property="og:site_name" content="Ferri Ristrutturazioni">
+    <meta property="og:image" content="https://www.ferriristrutturazioni.com/assets/img/locale-frascati-hero.webp">
+    <meta property="og:image:alt" content="Portfolio progetti di ristrutturazione Ferri a Frascati e Castelli Romani">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.ferriristrutturazioni.com/assets/img/locale-frascati-hero.webp">
 
     <!-- Self-hosted Fonts -->
     <link rel="stylesheet" href="assets/css/fonts.css">
@@ -28,6 +31,31 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Portfolio Progetti Ferri Ristrutturazioni",
+      "description": "Portfolio di ristrutturazioni residenziali e commerciali realizzate a Frascati e nei Castelli Romani.",
+      "url": "https://www.ferriristrutturazioni.com/progetti.html",
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "Locale commerciale a Frascati",
+          "url": "https://www.ferriristrutturazioni.com/progetto-locale-frascati.html",
+          "image": "https://www.ferriristrutturazioni.com/assets/img/locale-frascati-hero.webp"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Appartamento a Frascati",
+          "url": "https://www.ferriristrutturazioni.com/progetto-appartamento-frascati.html",
+          "image": "https://www.ferriristrutturazioni.com/assets/img/residenza-grottaferrata-hero.webp"
+        }
+      ]
+    }
+    </script>
     <style>
         /* Slider Transitions */
         .slide {
