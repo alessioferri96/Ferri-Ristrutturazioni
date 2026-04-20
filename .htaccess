@@ -1,3 +1,10 @@
+# Redirect no-www → www
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^ferriristrutturazioni\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.ferriristrutturazioni.com/$1 [R=301,L]
+</IfModule>
+
 DirectoryIndex index.html index.php
 ErrorDocument 404 /404.html
 
