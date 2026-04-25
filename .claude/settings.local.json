@@ -12,7 +12,10 @@
       "Bash(grep -n '<link.*canonical' index.html)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(ls -la sitemap.xml robots.txt)",
+      "Bash(cat robots.txt)",
+      "Bash(cat sitemap.xml)"
     ]
   }
 }
