@@ -222,7 +222,7 @@
                             <polyline points="9 22 9 12 15 12 15 22" />
                         </svg>
                     </div>
-                    <h3 class="font-display text-xl font-bold uppercase text-secondary mb-4">Sede Legale</h3>
+                    <h2 class="font-display text-xl font-bold uppercase text-secondary mb-4">Sede Legale</h2>
                     <p class="text-gray-600 mb-2 font-bold">Via Ottaviani n°21 INT 1 <br> 00044 FRASCATI RM IT</p>
                     <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Ottaviani+21+Frascati+RM" target="_blank" rel="noopener noreferrer"
                         class="inline-block mt-4 text-primary text-sm font-bold uppercase tracking-wider border-b border-primary hover:text-secondary hover:border-secondary transition-colors">Indicazioni
@@ -240,7 +240,7 @@
                             </path>
                         </svg>
                     </div>
-                    <h3 class="font-display text-xl font-bold uppercase text-secondary mb-4">Come Contattarci</h3>
+                    <h2 class="font-display text-xl font-bold uppercase text-secondary mb-4">Come Contattarci</h2>
                     <p class="text-gray-600 mb-4 text-sm">Per informazioni su progetti in corso, preventivi o urgenze di
                         cantiere.</p>
                     <div class="space-y-2 font-bold text-gray-800">
@@ -261,7 +261,7 @@
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </div>
-                    <h3 class="font-display text-xl font-bold uppercase text-secondary mb-4">Lavora con Noi</h3>
+                    <h2 class="font-display text-xl font-bold uppercase text-secondary mb-4">Lavora con Noi</h2>
                     <p class="text-gray-600 mb-4 text-sm">Siamo sempre alla ricerca di architetti, geometri e artigiani
                         qualificati da inserire nel team.</p>
                     <a href="mailto:info@ferriristrutturazioni.com"
@@ -426,7 +426,7 @@
             });
 
             // Add Marker
-            const marker = L.marker([41.8063, 12.6810], { icon: customIcon }).addTo(map);
+            const marker = L.marker([41.8063, 12.6810], { icon: customIcon, title: 'Sede Ferri Ristrutturazioni, Via Ottaviani 21, Frascati', alt: 'Sede Ferri Ristrutturazioni' }).addTo(map);
 
             // Add Popup
             marker.bindPopup(`
