@@ -6,7 +6,13 @@
       "Bash(cd \"/mnt/c/Users/andre/OneDrive/Desktop/Progetti/Ferri Ristrutturazioni\" && sed -i 's|border border-white/30 text-white/70 text-\\\\[10px\\\\] font-sans font-bold tracking-\\\\[0\\\\.3em\\\\] uppercase animate-fade-in-down|border border-primary text-primary text-[10px] font-sans font-bold tracking-[0.3em] uppercase animate-fade-in-down|g' progetto-residenza-grottaferrata.html progetto-villa-tuscolana.html progetto-locale-frascati.html)",
       "Bash(cd \"/mnt/c/Users/andre/OneDrive/Desktop/Progetti/Ferri Ristrutturazioni\" && sed -i 's|<div class=\"w-16 h-px bg-white/30\"></div>|<div class=\"w-16 h-px bg-primary\"></div>|g' progetto-residenza-grottaferrata.html progetto-villa-tuscolana.html progetto-locale-frascati.html && sed -i 's|<p class=\"text-white/60 text-sm font-sans tracking-\\\\[0\\\\.2em\\\\] uppercase\">|<p class=\"text-primary text-sm font-sans tracking-[0.2em] uppercase\">|g' progetto-residenza-grottaferrata.html progetto-villa-tuscolana.html progetto-locale-frascati.html)",
       "Bash(cd \"/mnt/c/Users/andre/OneDrive/Desktop/Progetti/Ferri Ristrutturazioni\" && sed -i 's|text-primary/30 text-6xl|text-primary text-6xl|g' progetto-residenza-grottaferrata.html progetto-villa-tuscolana.html && sed -i 's|<div class=\"w-8 h-px bg-primary/50\"></div>|<div class=\"w-8 h-px bg-primary\"></div>|g' progetto-residenza-grottaferrata.html progetto-villa-tuscolana.html)",
-      "Bash(cd \"/mnt/c/Users/andre/OneDrive/Desktop/Progetti/Ferri Ristrutturazioni\" && sed -i 's|tracking-\\\\[0\\\\.3em\\\\] uppercase text-white/30 mb-6\">Progetto Successivo|tracking-[0.3em] uppercase text-primary mb-6\">Progetto Successivo|g' progetto-residenza-grottaferrata.html progetto-villa-tuscolana.html progetto-locale-frascati.html)"
+      "Bash(cd \"/mnt/c/Users/andre/OneDrive/Desktop/Progetti/Ferri Ristrutturazioni\" && sed -i 's|tracking-\\\\[0\\\\.3em\\\\] uppercase text-white/30 mb-6\">Progetto Successivo|tracking-[0.3em] uppercase text-primary mb-6\">Progetto Successivo|g' progetto-residenza-grottaferrata.html progetto-villa-tuscolana.html progetto-locale-frascati.html)",
+      "Bash(python3 *)",
+      "Bash(grep -n 'rel=\"canonical\"\\\\|rel=canonical' index.html)",
+      "Bash(grep -n '<link.*canonical' index.html)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
