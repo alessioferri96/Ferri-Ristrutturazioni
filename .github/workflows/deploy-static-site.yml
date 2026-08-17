@@ -39,6 +39,7 @@ jobs:
             resources/**
             README.md
             GEMINI.md
+            CLAUDE.md
             *.zip
             package.json
             package-lock.json
