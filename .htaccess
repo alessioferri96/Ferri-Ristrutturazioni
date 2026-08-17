@@ -8,6 +8,11 @@
 DirectoryIndex index.html index.php
 ErrorDocument 404 /404.html
 
+# Blocca il file di stato del deploy FTP (elenca tutti i file del server)
+<Files ".ftp-deploy-sync-state.json">
+  Require all denied
+</Files>
+
 # Redirect /index.html to / for canonical consistency
 <IfModule mod_rewrite.c>
   RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]

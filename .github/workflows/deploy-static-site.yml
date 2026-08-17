@@ -40,3 +40,7 @@ jobs:
             README.md
             GEMINI.md
             *.zip
+            package.json
+            package-lock.json
+            input.css
+            tailwind.config.js
