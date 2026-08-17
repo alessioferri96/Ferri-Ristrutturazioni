@@ -8,10 +8,12 @@
 DirectoryIndex index.html index.php
 ErrorDocument 404 /404.html
 
-# Blocca il file di stato del deploy FTP (elenca tutti i file del server)
-<Files ".ftp-deploy-sync-state.json">
+# Blocca i file di servizio/build già presenti sul server.
+# Sono esclusi dal deploy, ma l'action non cancella i file esclusi:
+# li rende solo non aggiornabili. Quindi si nega l'accesso.
+<FilesMatch "^(package(-lock)?\.json|input\.css|tailwind\.config\.js|\.ftp-deploy-sync-state\.json)$">
   Require all denied
-</Files>
+</FilesMatch>
 
 # Redirect /index.html to / for canonical consistency
 <IfModule mod_rewrite.c>
