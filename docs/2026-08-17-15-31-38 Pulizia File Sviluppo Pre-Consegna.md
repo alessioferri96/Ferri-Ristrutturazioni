@@ -81,10 +81,22 @@ porta 21, cartella di upload `public_html`.
 | `index-wip.html` | 200 | **404** ✅ rimosso dal server |
 | `tmp_reflog.txt` | 200 | **404** ✅ rimosso dal server |
 | `.ftp-deploy-sync-state.json` | 200 | **403** ✅ bloccato da `.htaccess` |
-| `package.json` | 200 | 403 (secondo passaggio) |
-| `package-lock.json` | 200 | 403 (secondo passaggio) |
-| `input.css` | 200 | 403 (secondo passaggio) |
-| `tailwind.config.js` | 200 | 403 (secondo passaggio) |
+| `package.json` | 200 | **403** ✅ all'origine |
+| `package-lock.json` | 200 | **403** ✅ all'origine |
+| `input.css` | 200 | **403** ✅ all'origine |
+| `tailwind.config.js` | 200 | **403** ✅ all'origine |
+
+**Attenzione alla CDN in fase di verifica:** subito dopo il deploy alcuni di
+questi file rispondevano ancora 200. Non era un fallimento della regola: erano
+copie servite dalla cache dell'edge (`x-hcdn-cache-status: HIT`, `age: 23` e
+`age: 1410`). Interrogando gli stessi URL con un parametro anti-cache
+(`?cb=<random>`) tutti rispondono **403**, cioè la regola è attiva
+all'origine. Gli edge Hostinger sono più d'uno (`int-edge3`, `int-edge5`,
+`int-edge6`) e hanno cache indipendenti: un singolo `curl` può colpirne uno
+caldo e uno freddo a richieste consecutive, dando risultati contraddittori.
+
+**Azione residua:** svuotare la cache CDN da hPanel per non aspettare la
+scadenza naturale (`max-age=2592000`, 30 giorni).
 
 **Gotcha rilevato:** inserire un file nella lista `exclude` di
 FTP-Deploy-Action **non lo cancella dal server** — l'action lo ignora
