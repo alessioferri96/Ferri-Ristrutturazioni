@@ -142,6 +142,12 @@ va rimesso l'**IP di origine** del server (lo si trova in Hostinger → File →
 Account FTP), mai il nome del dominio, che punta alla CDN dove l'FTP non
 risponde.
 
+Se invece la pubblicazione è **verde ma online non cambia niente**, i file sono
+finiti nella cartella sbagliata. L'utente FTP entra in `/public_html`, che
+**non** è la cartella del sito: il sito sta in
+`/domains/ferriristrutturazioni.com/public_html/` (è il valore del segreto
+`FTP_TARGET_DIR`). L'etichetta "public_html" che mostra hPanel trae in inganno.
+
 ---
 
 ## Cose da non toccare senza sapere cosa si fa

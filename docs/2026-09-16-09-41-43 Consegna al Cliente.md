@@ -80,7 +80,35 @@ nessuna modifica a CSP o pagine.
 Tutto intestato ad **Alessio Ferri** (`alessioferri1996p@gmail.com`), come
 Business Profile, Search Console e Iubenda.
 
-Da compilare man mano.
+Svolgimento del 16/09 (Alessio in call):
+
+1. Export posta `info@` — **saltato**: nessun contenuto da conservare (Andrea).
+2. ✅ Dominio spostato dall'account di Andrea a quello di Alessio (funzione
+   self-service, nessun EPP). Verifica: NS/MX/SPF/DKIM/DMARC/www/ftp identici allo
+   snapshot pre-trasferimento, sito 200.
+3. ✅ Eliminati sul piano di Andrea sito **ed email** del dominio (il piano resta:
+   ospita anche drugolab.it).
+4. ✅ Sul piano **Unlimited web hosting** di Alessio: sito vuoto, SSL Let's Encrypt
+   (apex + www), casella `info@` gratuita.
+5. ✅ Secret GitHub aggiornati: `FTP_SERVER=46.202.156.244`, `FTP_USERNAME`,
+   `FTP_PASSWORD`, `FTP_TARGET_DIR=/domains/ferriristrutturazioni.com/public_html/`.
+   - **Gotcha:** hPanel indica "public_html", ma l'utente FTP entra in
+     `/public_html`, che NON è la web root. Il primo deploy (verde) è finito lì e
+     online restava la Default page. Individuata la web root via listing FTP,
+     rimossi i file caricati per errore e il `default.php` segnaposto.
+   - Aggiunto `.claude/**` a `exclude`: `.claude/settings.local.json` veniva
+     pubblicato anche sul vecchio server.
+   - Verifica: 9 pagine 200 e md5 identiche, asset identici, file di build 403/404,
+     redirect apex/index.html 301, 404 corretto, CSP/HSTS/X-Frame attivi.
+6. Email: DNS di posta identici allo snapshot; l'MX accetta `info@` (250) e
+   rifiuta indirizzi inesistenti (550). Mail esterna → **arrivata**. Form →
+   **arrivato in Spam**: diagnosi in corso sulle intestazioni.
+
+Effetto collaterale atteso: il TXT `google-site-verification` di Andrea non è
+più nel DNS (la verifica regge sul meta tag in `index.html` fino al punto 4).
+
+Da fare: fix spam del form, punto 4, rotazione credenziali (la password FTP è
+stata scritta in chat), verbale e scheda credenziali.
 
 ## Riepilogo Post-Implementazione
 
