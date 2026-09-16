@@ -33,6 +33,7 @@ jobs:
             **/.git*
             **/.git*/**
             .agent/**
+            .claude/**
             .github/**
             agents/**
             docs/**
