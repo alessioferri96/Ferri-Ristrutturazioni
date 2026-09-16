@@ -102,13 +102,16 @@ Svolgimento del 16/09 (Alessio in call):
      redirect apex/index.html 301, 404 corretto, CSP/HSTS/X-Frame attivi.
 6. Email: DNS di posta identici allo snapshot; l'MX accetta `info@` (250) e
    rifiuta indirizzi inesistenti (550). Mail esterna → **arrivata**. Form →
-   **arrivato in Spam**: diagnosi in corso sulle intestazioni.
+   **arrivato in Spam** (`dmarc=fail`, `X-Spam: Yes`) → risolto con invio via SMTP
+   autenticato, vedi doc `2026-09-16-11-03-56 Invio Form via SMTP Autenticato`.
+   Ora `dkim/spf/dmarc=pass`, Posta in arrivo.
 
 Effetto collaterale atteso: il TXT `google-site-verification` di Andrea non è
 più nel DNS (la verifica regge sul meta tag in `index.html` fino al punto 4).
 
-Da fare: fix spam del form, punto 4, rotazione credenziali (la password FTP è
-stata scritta in chat), verbale e scheda credenziali.
+Da fare: punto 4, rotazione credenziali (la password FTP è
+stata scritta in chat, come quella di `info@`: cambiandola va aggiornato anche
+`smtp-config.php` sul server), verbale e scheda credenziali.
 
 ## Riepilogo Post-Implementazione
 

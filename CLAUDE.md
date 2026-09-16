@@ -154,7 +154,13 @@ finiti nella cartella sbagliata. L'utente FTP entra in `/public_html`, che
 
 - **`assets/css/tailwind.css`** — generato, ogni modifica a mano viene persa alla ricompilazione
 - **`.htaccess`** — redirect, sicurezza e cache; un errore di sintassi qui rende **tutto** il sito irraggiungibile
-- **`send-mail.php`** — l'indirizzo di destinazione dei form è dentro questo file
+- **`send-mail.php`** — l'indirizzo di destinazione dei form è dentro questo file.
+  Invia tramite la casella `info@` (SMTP autenticato), con la password letta da
+  **`smtp-config.php`**, che sta sul server **sopra** la cartella del sito
+  (`/domains/ferriristrutturazioni.com/smtp-config.php`) e non è nel repository.
+  **Se cambi la password di `info@` in Hostinger, aggiornala anche lì.** Altrimenti
+  il form continua a funzionare, ma i messaggi tornano a finire in **spam**
+  senza nessun errore visibile.
 - **`.ftp-deploy-sync-state.json`** sul server — lo usa la pubblicazione automatica per capire cosa aggiornare
 
 Nota: togliere un file dalla lista `exclude` del workflow **non lo cancella**

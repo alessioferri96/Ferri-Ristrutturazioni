@@ -48,4 +48,20 @@ messaggio parte dal server di posta Hostinger, che lo firma DKIM
 
 ## Riepilogo Post-Implementazione
 
-Da compilare.
+Completato il 16/09 (commit `1acfb58` + `smtp-config.php` caricato via FTPS).
+
+1. ✅ `php -l` senza errori.
+2. ✅ Password errata contro `smtp.hostinger.com` → `535`, la funzione torna
+   `false` in ~2 s, nessuna eccezione.
+3. ✅ Invio reale dal terminale e dal form online: entrambi in **Posta in arrivo**,
+   `Return-Path: info@ferriristrutturazioni.com`, `dkim=pass spf=pass dmarc=pass`,
+   nessun `X-Spam`.
+
+Ripiego verificato sul campo: un invio fatto mentre sul server c'era una password
+sbagliata è arrivato comunque (via `mail()`, in Spam) — nessun contatto perso.
+
+Problemi riscontrati: le prime prove di login fallivano per una password
+comunicata in modo errato, non per il codice (confermato con un client SMTP
+indipendente e con IMAP). `CLAUDE.md` aggiornato: cambiando la password di
+`info@` va aggiornato anche `smtp-config.php`, altrimenti il form torna in spam
+senza errori visibili.
