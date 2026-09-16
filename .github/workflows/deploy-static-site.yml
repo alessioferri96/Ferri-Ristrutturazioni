@@ -45,3 +45,6 @@ jobs:
             package-lock.json
             input.css
             tailwind.config.js
+            biglietto-*
+            assets/img/hero-print.jpg
+            assets/img/qrcode-ferri.png
