@@ -45,6 +45,9 @@ Dal Business Profile: Impostazioni → Persone e accesso → aggiungere l'accoun
 proprietario → dopo l'accettazione promuoverlo a **Proprietario principale**.
 Nessuna modifica al repo.
 
+Stato 16/09: Alessio aggiunto come proprietario. Il passaggio a **Proprietario
+principale** è bloccato da Google per 7 giorni → da completare dal **23/09/2026**.
+
 ## 4. Search Console — eseguire DOPO il punto 7
 
 Stato: verifica con il token personale di Andrea `014WSJ…`, presente come TXT
@@ -67,6 +70,8 @@ arriverebbero a lui. P.IVA assente.
    2026"), nessuna Gmail di Andrea residua. P.IVA non ancora presente (facoltativa).
 2. Migrazione del progetto sull'account Iubenda di Marco: email dall'indirizzo
    registrato a `info@iubenda.it` (nessuna funzione self-service)
+   Stato 16/09: mail inviata da Andrea, **in attesa di risposta**. Dopo la
+   migrazione: verificare che banner cookie e policy funzionino ancora sul sito.
 
 ID policy e widget restano invariati: nessuna modifica al repo.
 
