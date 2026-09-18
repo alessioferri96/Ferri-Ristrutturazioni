@@ -15,20 +15,7 @@ $telefono = htmlspecialchars(trim($_POST['phone'] ?? ''), ENT_QUOTES, 'UTF-8');
 $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $messaggio = htmlspecialchars(trim($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8');
 $privacy = isset($_POST['privacy']) ? true : false;
-$pagine_consentite = [
-    'index.html',
-    'chi-siamo.html',
-    'servizi.html',
-    'progetti.html',
-    'contatti.html',
-    'ristrutturazioni-frascati.html'
-];
-$pagina_richiesta = trim($_POST['_pagina'] ?? '');
-$pagina_origine = in_array($pagina_richiesta, $pagine_consentite, true)
-    ? $pagina_richiesta
-    : 'contatti.html';
-
-$ancora = '#form-feedback';
+$pagina_origine = htmlspecialchars(trim($_POST['_pagina'] ?? 'sconosciuta'), ENT_QUOTES, 'UTF-8');
 
 // Validazione campi obbligatori
 $errori = [];
@@ -40,13 +27,14 @@ if (!$privacy) $errori[] = 'Devi accettare la Privacy Policy';
 // Protezione anti-spam (honeypot)
 if (!empty($_POST['_hp'])) {
     // Bot rilevato, rispondi con successo finto
-    header('Location: ' . $pagina_origine . '?status=ok' . $ancora, true, 303);
+    header('Location: contatti.html?status=ok');
     exit;
 }
 
 if (!empty($errori)) {
     // Redirect con errore
-    header('Location: ' . $pagina_origine . '?status=errore&msg=' . urlencode(implode(', ', $errori)) . $ancora, true, 303);
+    $pagina_ritorno = ($pagina_origine !== 'sconosciuta') ? $pagina_origine : 'contatti.html';
+    header('Location: ' . $pagina_ritorno . '?status=errore&msg=' . urlencode(implode(', ', $errori)));
     exit;
 }
 
@@ -121,9 +109,9 @@ if (!$inviato) {
 }
 
 if ($inviato) {
-    header('Location: ' . $pagina_origine . '?status=ok' . $ancora, true, 303);
+    header('Location: contatti.html?status=ok');
 } else {
-    header('Location: ' . $pagina_origine . '?status=errore&msg=' . urlencode('Errore nell\'invio. Riprova o contattaci telefonicamente.') . $ancora, true, 303);
+    header('Location: contatti.html?status=errore&msg=' . urlencode('Errore nell\'invio. Riprova o contattaci telefonicamente.'));
 }
 exit;
 ?>
