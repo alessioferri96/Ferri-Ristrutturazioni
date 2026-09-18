@@ -145,6 +145,11 @@
       text-align: center;
     }
 
+    .fronte .logo-icon {
+      height: 10mm;
+      width: auto;
+    }
+
     .fronte .logo-text {
       display: flex;
       flex-direction: column;
@@ -269,27 +274,6 @@
       height: 100% !important;
     }
 
-    /* Person block */
-    .retro .person-name {
-      font-family: 'Oswald', sans-serif;
-      font-weight: 600;
-      font-size: 12pt;
-      color: var(--white);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      line-height: 1.1;
-    }
-
-    .retro .person-role {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300;
-      font-size: 6.5pt;
-      color: var(--blue);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-top: 1mm;
-    }
-
     /* Contact grid */
     .retro .contacts {
       display: flex;
@@ -323,6 +307,24 @@
     .retro .contact-text strong {
       color: var(--white);
       font-weight: 500;
+    }
+
+    .retro .contact-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6mm;
+    }
+
+    .retro .contact-icon-group {
+      display: flex;
+      align-items: center;
+      gap: 1mm;
+      flex-shrink: 0;
+    }
+
+    .retro .contact-icon-group .contact-icon {
+      width: 3.2mm;
+      height: 3.2mm;
     }
 
     /* Footer */
@@ -383,6 +385,7 @@
 
       <div class="center">
         <div class="logo-wrap">
+          <img class="logo-icon" src="assets/img/logo-fr-icon-print.png" alt="">
           <div class="logo-text">
             <span class="company-name">Ferri</span>
             <span class="company-sub">Ristrutturazioni</span>
@@ -416,30 +419,25 @@
 
       <div class="content">
 
-        <!-- Nome persona -->
-        <div>
-          <div class="person-name">Simone Ferri</div>
-          <div class="person-role">Titolare &amp; Responsabile Lavori</div>
-        </div>
-
         <!-- Contatti -->
         <div class="contacts">
 
           <div class="contact-row">
-            <!-- Phone icon -->
-            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
-            </svg>
-            <span class="contact-text"><strong>+39 342 855 6117</strong></span>
-          </div>
-
-          <div class="contact-row">
-            <!-- WhatsApp icon -->
-            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.955-1.397A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.72 0-3.319-.468-4.691-1.282l-.336-.2-3.479.98.94-3.426-.219-.351A7.944 7.944 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/>
-            </svg>
-            <span class="contact-text">WhatsApp &nbsp;<strong>+39 340 883 2362</strong></span>
+            <div class="contact-icon-group">
+              <!-- Phone icon -->
+              <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+              </svg>
+              <!-- WhatsApp icon -->
+              <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.955-1.397A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.72 0-3.319-.468-4.691-1.282l-.336-.2-3.479.98.94-3.426-.219-.351A7.944 7.944 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/>
+              </svg>
+            </div>
+            <div class="contact-text-group">
+              <span class="contact-text"><strong>+39 342 855 6117</strong></span>
+              <span class="contact-text"><strong>+39 340 883 2362</strong></span>
+            </div>
           </div>
 
           <div class="contact-row">
