@@ -80,7 +80,7 @@
     /* blend border */
     transform: translateX(-0.5rem) scale(1.5) !important;
     /* -translate-x-2 is -0.5rem. We keep it and add scale */
-    animation: pulse-blue 2s ease-out 1;
+    animation: pulse-primary 2s ease-out 1;
 }
 
 @media (min-width: 768px) {
@@ -90,7 +90,7 @@
     }
 }
 
-@keyframes pulse-blue {
+@keyframes pulse-primary {
     0% {
         box-shadow: 0 0 0 0 rgba(110, 193, 228, 0.7);
     }
@@ -145,10 +145,165 @@ details > summary:focus-visible {
     outline-offset: 3px;
 }
 
-/* Rimuove outline da bottoni interattivi mobile (evita bordo blu persistente al tap) */
+/* Mantiene ben visibile il focus sui comandi flottanti e sul menu */
 #mobile-menu-toggle:focus-visible,
 a[aria-label="Chatta su WhatsApp"]:focus-visible {
-    outline: none;
+    outline: 3px solid #6EC1E4;
+    outline-offset: 4px;
+}
+
+/* Tema scuro per le tile OpenStreetMap senza alterare marker e controlli Leaflet */
+#map .leaflet-tile-pane {
+    filter: grayscale(1) invert(1) brightness(0.65) contrast(1.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =========================================
+   Prima / Dopo — Slider di Confronto Immagini
+   ========================================= */
+.ba-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: ew-resize;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ba-slider-media {
+    position: absolute;
+    inset: 0;
+}
+
+.ba-slider-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    filter: contrast(1.08) saturate(1.12) brightness(1.03);
+}
+
+.ba-slider-before {
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+}
+
+.ba-slider-after {
+    z-index: 1;
+}
+
+/* Placeholder mostrato finché la foto reale non è stata caricata sul sito */
+.ba-slider-placeholder {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: repeating-linear-gradient(135deg, #1a1a1a, #1a1a1a 10px, #151515 10px, #151515 20px);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7rem;
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.ba-slider-missing .ba-slider-placeholder {
+    display: flex;
+}
+
+.ba-slider-missing img {
+    display: none;
+}
+
+.ba-slider-tag {
+    position: absolute;
+    top: 1rem;
+    z-index: 3;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+}
+
+.ba-slider-tag-before {
+    left: 1rem;
+}
+
+.ba-slider-tag-after {
+    right: 1rem;
+}
+
+.ba-slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 4;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateX(-50%);
+    cursor: ew-resize;
+}
+
+.ba-slider-handle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -20px;
+    width: 40px;
+}
+
+.ba-slider-handle-grip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    color: #111;
+}
+
+.ba-slider-handle:focus-visible .ba-slider-handle-grip {
+    outline: 2px solid #6EC1E4;
+    outline-offset: 3px;
 }
 
 /* Prefers Reduced Motion — disabilita animazioni per chi lo richiede */
@@ -174,4 +329,37 @@ a[aria-label="Chatta su WhatsApp"]:focus-visible {
         transform: none !important;
         animation: none !important;
     }
+}
+
+/* Contact page: form first on mobile, map with a usable fallback. */
+[data-page="contact"] #site-header { background: #0a0a0a; }
+.contact-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 450px);
+    gap: 32px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 140px 32px 64px;
+    align-items: stretch;
+}
+.contact-map-wrap { position: relative; min-height: 560px; background: #202426; overflow: hidden; }
+.contact-map-wrap #map { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map-fallback {
+    position: absolute; z-index: 500; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 16px; padding: 32px; background: #202426; text-align: center; color: #fff;
+}
+.map-fallback[hidden] { display: none; }
+.map-fallback a { color: #6ec1e4; text-decoration: underline; text-underline-offset: 5px; }
+.contact-form-wrap { min-width: 0; }
+.form-feedback { margin-bottom: 24px; padding: 16px; border: 1px solid #6ec1e4; background: #142831; color: #fff; scroll-margin-top: 110px; }
+.form-feedback.is-error { border-color: #f5a89d; background: #3b211f; }
+.form-feedback[hidden] { display: none; }
+@media (max-width: 900px) {
+    .contact-hero { grid-template-columns: minmax(0, 1fr); padding: 112px 24px 48px; gap: 24px; }
+    .contact-form-wrap { order: -1; }
+    .contact-map-wrap { min-height: 300px; }
+}
+@media (max-width: 420px) {
+    .contact-hero { padding-inline: 16px; }
 }

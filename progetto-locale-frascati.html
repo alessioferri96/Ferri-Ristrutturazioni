@@ -25,13 +25,13 @@
     <meta name="twitter:image" content="https://www.ferriristrutturazioni.com/assets/img/locale-frascati-hero.webp">
 
     <!-- Self-hosted Fonts -->
-    <link rel="stylesheet" href="assets/css/fonts.css?v=20260919">
+    <link rel="stylesheet" href="assets/css/fonts.css">
 
     <!-- Tailwind CSS (Compiled for Production) -->
-    <link rel="stylesheet" href="assets/css/tailwind.css?v=20260919">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20260919">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260917">
 
     <!-- Editorial Font Class -->
     <style>
@@ -73,10 +73,10 @@
         src="https://embeds.iubenda.com/widgets/5cf8544a-d00c-4bd7-b5af-70ac7e398983.js" defer></script>
 </head>
 
-<body class="font-sans antialiased bg-[#0a0a0a] text-white selection:bg-primary selection:text-white">
+<body class="font-sans antialiased bg-[#0a0a0a] text-white selection:bg-primary selection:text-secondary">
 
     <!-- Skip to Content (Accessibilità WCAG 2.2) -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:uppercase focus:tracking-widest">Vai al contenuto</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-secondary focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:uppercase focus:tracking-widest">Vai al contenuto</a>
 
     <!-- Header -->
     <header id="site-header"
@@ -85,10 +85,14 @@
             class="container flex justify-between items-center h-20 md:h-[120px] transition-all duration-500 ease-in-out group-[.scrolled]:h-20">
             <!-- Logo -->
             <a href="index.html"
-                class="flex flex-col leading-none group-[.scrolled]:text-white text-white transition-all duration-500 origin-left group-[.scrolled]:scale-[0.9] relative z-10 group-[.menu-active]:!text-white scale-110 md:scale-125">
-                <span class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
-                <span
-                    class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
+                class="flex items-center gap-2 md:gap-3 group-[.scrolled]:text-white text-white transition-all duration-500 origin-left group-[.scrolled]:scale-[0.9] relative z-10 group-[.menu-active]:!text-white scale-110 md:scale-125">
+                <img src="assets/img/logo-fr-icon.webp" alt="" width="240" height="220" class="h-9 md:h-11 w-auto shrink-0"
+                    loading="eager" fetchpriority="high">
+                <span class="flex flex-col leading-none">
+                    <span class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
+                    <span
+                        class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
+                </span>
             </a>
 
             <!-- Fullscreen Menu Toggle + WhatsApp -->
@@ -125,14 +129,14 @@
 
         <!-- Hero Full-Width -->
         <section class="relative min-h-[100svh] flex items-end overflow-hidden bg-cover bg-center bg-scroll md:bg-fixed"
-            style="background-image: url('assets/img/locale-frascati-hero.webp');" role="img" aria-label="Vista del locale commerciale ristrutturato a Frascati">
+            style="background-image: url('assets/img/locale-frascati-hero.webp');">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/50 to-black/20"></div>
             <div class="container relative z-10 pb-20 md:pb-32 px-6">
                 <div class="mb-8">
                     <span
                         class="inline-block py-1.5 px-4 border border-primary text-primary text-[10px] font-sans font-bold tracking-[0.3em] uppercase animate-fade-in-down">Commerciale</span>
                 </div>
-                <h1
+                <h1 aria-label="Locale Frascati"
                     class="font-editorial font-light text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] text-white leading-[0.85] mb-6 animate-fade-in-up">
                     Locale<br>Frascati
                 </h1>
@@ -231,6 +235,50 @@
             </div>
         </section>
 
+        <!-- Prima / Durante / Dopo -->
+        <section class="py-20 md:py-32 bg-[#0a0a0a]">
+            <div class="container max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12 md:mb-16">
+                    <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
+                    <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-4">Il Percorso</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
+                        Prima, Durante e Dopo
+                    </h2>
+                </div>
+
+                <p class="text-center text-white/40 text-xs uppercase tracking-widest mb-6">
+                    Trascina il cursore per scorrere tra prima, durante e dopo
+                </p>
+                <div class="ba-slider" id="pid-slider" role="group" aria-label="Confronto immagini prima, durante e dopo la ristrutturazione del locale a Frascati">
+                    <div class="ba-slider-media">
+                        <img src="assets/img/locale-frascati-dettagli.webp" alt="Il locale dopo la ristrutturazione, muratura in pietra e struttura in acciaio a vista" loading="lazy">
+                    </div>
+                    <div class="ba-slider-media" id="pid-layer-intermedio">
+                        <img src="assets/img/locale-frascati-durante.webp" alt="Il locale durante i lavori, struttura in acciaio montata e pareti ancora grezze" loading="lazy">
+                    </div>
+                    <div class="ba-slider-media" id="pid-layer-prima">
+                        <img src="assets/img/locale-frascati-prima.webp" alt="Il locale prima della ristrutturazione, facciata storica abbandonata" loading="lazy">
+                    </div>
+
+                    <span class="ba-slider-tag" style="left:1rem;">Prima</span>
+                    <span class="ba-slider-tag" style="left:50%; transform:translateX(-50%);">Durante</span>
+                    <span class="ba-slider-tag" style="right:1rem;">Dopo</span>
+
+                    <div class="ba-slider-handle" id="pid-handle" role="slider" tabindex="0" aria-orientation="horizontal"
+                        aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                        aria-label="Trascina per scorrere tra prima, durante e dopo" style="left:50%">
+                        <span class="ba-slider-handle-grip">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="18 8 22 12 18 16"></polyline>
+                                <polyline points="6 8 2 12 6 16"></polyline>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Image Gallery -->
         <section class="py-10 md:py-16 bg-[#0a0a0a]">
             <div class="container max-w-7xl mx-auto px-4 md:px-6">
@@ -295,7 +343,7 @@
                 </button>
 
                 <!-- Immagine -->
-                <img id="lightbox-img" src="" alt="Gallery image"
+                <img id="lightbox-img" alt="Immagine del progetto ingrandita"
                     style="max-width:100%; max-height:100%; object-fit:contain; display:block; transition:opacity 0.3s; user-select:none; -webkit-user-select:none; filter: contrast(1.08) saturate(1.12) brightness(1.03);">
 
                 <!-- Freccia destra — overlay -->
@@ -313,16 +361,20 @@
             </div>
         </div>
 
-        <!-- Next Project -->
-        <section class="py-16 sm:py-24 md:py-36 bg-[#0a0a0a] border-t border-white/5 group/next">
-            <div class="container max-w-5xl mx-auto px-6 text-center">
-                <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-6">Progetto Successivo</span>
-                <a href="progetto-appartamento-frascati.html"
-                    class="font-editorial text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light text-white/20 hover:text-white transition-colors duration-700 leading-[0.85] inline-block">
-                    Appartamento<br>a Frascati
-                </a>
-                <div class="mt-8">
-                    <div class="w-12 h-px bg-white/10 mx-auto group-hover/next:w-24 group-hover/next:bg-primary/50 transition-all duration-700"></div>
+        <section class="py-16 md:py-24 bg-secondary border-t border-white/10">
+            <div class="container max-w-5xl mx-auto px-6">
+                <div class="border-l-4 border-primary bg-white/[0.03] p-8 md:p-12">
+                    <span class="block text-sm font-sans font-bold tracking-[0.25em] uppercase text-primary mb-4">Parliamo del tuo progetto</span>
+                    <div class="grid md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-end">
+                        <div>
+                            <h2 class="font-display font-bold text-3xl md:text-5xl uppercase text-white leading-tight mb-4">Vuoi un risultato simile?</h2>
+                            <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-2xl">Partiamo da un sopralluogo accurato, poi definiamo insieme lavorazioni, tempi e costi.</p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3">
+                            <a href="contatti.html" class="inline-flex min-h-12 items-center justify-center bg-primary px-6 py-3 text-secondary font-bold uppercase tracking-widest text-sm hover:bg-primary-dark transition-colors">Richiedi sopralluogo</a>
+                            <a href="tel:+393408832362" class="inline-flex min-h-12 items-center justify-center border border-white/30 px-6 py-3 text-white font-bold uppercase tracking-widest text-sm hover:border-primary hover:text-primary transition-colors">Chiama ora</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -334,11 +386,15 @@
         <section class="py-12 border-b border-white/10">
             <div class="container flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="w-48 text-center md:text-left transform scale-125 origin-center md:origin-left">
-                    <a href="index.html" class="flex flex-col leading-none text-white transition-all duration-500">
-                        <span
-                            class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
-                        <span
-                            class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
+                    <a href="index.html"
+                        class="flex items-center justify-center md:justify-start gap-3 leading-none text-white transition-all duration-500">
+                        <img src="assets/img/logo-fr-icon.webp" alt="" width="240" height="220" class="h-10 w-auto shrink-0" loading="lazy">
+                        <span class="flex flex-col leading-none">
+                            <span
+                                class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
+                            <span
+                                class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
+                        </span>
                     </a>
                 </div>
                 <nav
@@ -347,7 +403,6 @@
                     <a href="servizi.html" class="hover:text-primary transition-colors">Servizi</a>
                     <a href="progetti.html" class="text-primary hover:text-primary transition-colors">Progetti</a>
                     <a href="contatti.html" class="hover:text-primary transition-colors">Contatti</a>
-                    <a href="ristrutturazioni-frascati.html" class="hover:text-primary transition-colors">Ristrutturazioni Frascati</a>
                 </nav>
                 <div>
                     <a href="tel:+393408832362"
@@ -374,18 +429,7 @@
                     <script
                         type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
                     <div class="flex gap-4 border-l border-white/10 pl-6 ml-2">
-                        <a href="404.html" class="hover:text-primary transition-colors text-white/50" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                                </path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                        <a href="404.html" class="hover:text-primary transition-colors text-white/50" aria-label="Instagram">
+                        <a href="https://www.instagram.com/ferriristrutturazioni/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors text-white/50" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -400,7 +444,60 @@
         </section>
     </footer>
 
-    <script src="assets/js/main.js?v=20260919" defer></script>
+    <script src="assets/js/main.js?v=20260917" defer></script>
+
+    <!-- Prima/Durante/Dopo — Slider a Trascinamento -->
+    <script>
+    (function() {
+        const slider = document.getElementById('pid-slider');
+        const handle = document.getElementById('pid-handle');
+        const primaLayer = document.getElementById('pid-layer-prima');
+        const intermedioLayer = document.getElementById('pid-layer-intermedio');
+        if (!slider || !handle || !primaLayer || !intermedioLayer) return;
+
+        const setPosition = (percent) => {
+            const clamped = Math.min(100, Math.max(0, percent));
+            handle.style.left = clamped + '%';
+            handle.setAttribute('aria-valuenow', Math.round(clamped));
+
+            // 0-50%: la foto "Prima" si ritira svelando "Durante"
+            // 50-100%: la foto "Durante" si ritira svelando "Dopo"
+            const primaCut = clamped <= 50 ? (clamped / 50) * 100 : 100;
+            const intermedioCut = clamped <= 50 ? 0 : ((clamped - 50) / 50) * 100;
+
+            primaLayer.style.clipPath = `inset(0 ${primaCut}% 0 0)`;
+            intermedioLayer.style.clipPath = `inset(0 ${intermedioCut}% 0 0)`;
+        };
+
+        const percentFromClientX = (clientX) => {
+            const rect = slider.getBoundingClientRect();
+            return ((clientX - rect.left) / rect.width) * 100;
+        };
+
+        const onPointerMove = (e) => setPosition(percentFromClientX(e.clientX));
+
+        const stopDragging = () => {
+            window.removeEventListener('pointermove', onPointerMove);
+            window.removeEventListener('pointerup', stopDragging);
+        };
+
+        slider.addEventListener('pointerdown', (e) => {
+            setPosition(percentFromClientX(e.clientX));
+            window.addEventListener('pointermove', onPointerMove);
+            window.addEventListener('pointerup', stopDragging);
+        });
+
+        handle.addEventListener('keydown', (e) => {
+            const current = parseFloat(handle.style.left) || 50;
+            if (e.key === 'ArrowLeft') { setPosition(current - 5); e.preventDefault(); }
+            if (e.key === 'ArrowRight') { setPosition(current + 5); e.preventDefault(); }
+            if (e.key === 'Home') { setPosition(0); e.preventDefault(); }
+            if (e.key === 'End') { setPosition(100); e.preventDefault(); }
+        });
+
+        setPosition(50);
+    })();
+    </script>
 
     <!-- Lightbox Script -->
     <script>
