@@ -142,25 +142,13 @@ va rimesso l'**IP di origine** del server (lo si trova in Hostinger → File →
 Account FTP), mai il nome del dominio, che punta alla CDN dove l'FTP non
 risponde.
 
-Se invece la pubblicazione è **verde ma online non cambia niente**, i file sono
-finiti nella cartella sbagliata. L'utente FTP entra in `/public_html`, che
-**non** è la cartella del sito: il sito sta in
-`/domains/ferriristrutturazioni.com/public_html/` (è il valore del segreto
-`FTP_TARGET_DIR`). L'etichetta "public_html" che mostra hPanel trae in inganno.
-
 ---
 
 ## Cose da non toccare senza sapere cosa si fa
 
 - **`assets/css/tailwind.css`** — generato, ogni modifica a mano viene persa alla ricompilazione
 - **`.htaccess`** — redirect, sicurezza e cache; un errore di sintassi qui rende **tutto** il sito irraggiungibile
-- **`send-mail.php`** — l'indirizzo di destinazione dei form è dentro questo file.
-  Invia tramite la casella `info@` (SMTP autenticato), con la password letta da
-  **`smtp-config.php`**, che sta sul server **sopra** la cartella del sito
-  (`/domains/ferriristrutturazioni.com/smtp-config.php`) e non è nel repository.
-  **Se cambi la password di `info@` in Hostinger, aggiornala anche lì.** Altrimenti
-  il form continua a funzionare, ma i messaggi tornano a finire in **spam**
-  senza nessun errore visibile.
+- **`send-mail.php`** — l'indirizzo di destinazione dei form è dentro questo file
 - **`.ftp-deploy-sync-state.json`** sul server — lo usa la pubblicazione automatica per capire cosa aggiornare
 
 Nota: togliere un file dalla lista `exclude` del workflow **non lo cancella**
