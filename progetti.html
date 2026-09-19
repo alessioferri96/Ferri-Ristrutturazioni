@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/tailwind.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20260917">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -50,45 +50,60 @@
         },
         {
           "@type": "CreativeWork",
-          "name": "Residenza Frascati",
+          "name": "Appartamento a Frascati",
           "url": "https://www.ferriristrutturazioni.com/progetto-appartamento-frascati.html",
-          "image": "https://www.ferriristrutturazioni.com/assets/img/residenza-frascati-hero.webp"
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "Negozio a Roma",
-          "url": "https://www.ferriristrutturazioni.com/progetto-negozio-roma.html",
-          "image": "https://www.ferriristrutturazioni.com/assets/img/negozio-roma-hero-2.webp"
+          "image": "https://www.ferriristrutturazioni.com/assets/img/residenza-grottaferrata-hero.webp"
         }
       ]
     }
     </script>
+    <style>
+        /* Slider Transitions */
+        .slide {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .slide-content {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease-out 0.3s;
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+
     <!-- Iubenda Cookie Solution -->
     <script type="text/javascript" defer
         src="https://embeds.iubenda.com/widgets/5cf8544a-d00c-4bd7-b5af-70ac7e398983.js"></script>
 </head>
 
 <body
-    class="preload font-sans text-white antialiased bg-[#0a0a0a] selection:bg-primary selection:text-secondary overflow-x-hidden">
+    class="preload font-sans text-secondary antialiased bg-gray-50 selection:bg-primary selection:text-white overflow-x-hidden">
 
     <!-- Skip to Content (Accessibilità WCAG 2.2) -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-secondary focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:uppercase focus:tracking-widest">Vai al contenuto</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:uppercase focus:tracking-widest">Vai al contenuto</a>
 
     <!-- Header (Identical to Home) -->
     <header id="site-header"
-        class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out bg-transparent text-white border-b border-transparent [&.scrolled]:bg-[#0a0a0a]/95 [&.scrolled]:text-white [&.scrolled]:backdrop-blur-sm [&.scrolled]:border-white/10 group [&.menu-active]:z-[70] [&.menu-active]:!bg-transparent [&.menu-active]:!shadow-none [&.menu-active]:!transition-none">
+        class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out bg-transparent text-white [&.scrolled]:bg-white [&.scrolled]:text-black [&.scrolled]:shadow-md group [&.menu-active]:z-[70] [&.menu-active]:!bg-transparent [&.menu-active]:!shadow-none [&.menu-active]:!transition-none">
         <div
             class="container flex justify-between items-center h-20 md:h-[120px] transition-all duration-500 ease-in-out group-[.scrolled]:h-20">
             <!-- Logo -->
             <a href="index.html"
-                class="flex items-center gap-2 md:gap-3 group-[.scrolled]:text-white text-white transition-all duration-500 origin-left group-[.scrolled]:scale-[0.9] relative z-10 group-[.menu-active]:!text-white scale-110 md:scale-125">
-                <img src="assets/img/logo-fr-icon.webp" alt="" width="240" height="220" class="h-9 md:h-11 w-auto shrink-0"
-                    loading="eager" fetchpriority="high">
-                <span class="flex flex-col leading-none">
-                    <span class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
-                    <span
-                        class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
-                </span>
+                class="flex flex-col leading-none group-[.scrolled]:text-black text-white transition-all duration-500 origin-left group-[.scrolled]:scale-[0.9] relative z-10 group-[.menu-active]:!text-white scale-110 md:scale-125">
+                <span class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
+                <span
+                    class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
             </a>
 
             <!-- Fullscreen Menu Toggle + WhatsApp -->
@@ -122,189 +137,133 @@
         </div>
     </header>
 
-    <!-- Main Content: Category Chooser + Filterable Grid -->
-    <main id="main-content">
+    <!-- Main Content: Immersive Slider -->
+    <main id="main-content" class="relative h-[100svh] w-full bg-secondary overflow-hidden">
 
-        <!-- Category Chooser -->
-        <section class="relative min-h-[300px] md:h-[78svh] md:min-h-[640px] md:max-h-[820px] w-full bg-secondary overflow-hidden">
+        <!-- Slider Container -->
+        <div id="projects-slider" class="absolute inset-0 w-full h-full">
 
-            <div class="relative pt-32 pb-14 md:absolute md:top-36 md:pt-0 md:pb-0 left-0 right-0 z-20 text-center px-6">
-                <span class="block text-sm font-sans font-bold tracking-[0.25em] uppercase text-primary mb-3">Portfolio</span>
-                <h1 class="font-display font-bold text-4xl md:text-5xl text-white uppercase leading-none">I Progetti Realizzati</h1>
-            </div>
-
-            <div class="hidden md:flex h-full w-full">
-
-                <!-- Panel: Residenziale -->
-                <button type="button" data-category-choice="residenziale"
-                    class="group relative flex-1 h-1/2 md:h-full overflow-hidden focus:outline-none">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                        style="background-image: url('assets/img/residenza-frascati-hero.webp');" role="img"
-                        aria-label="Appartamento ristrutturato a Frascati con mattoni a vista"></div>
-                    <div class="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-colors duration-500"></div>
-                    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-                        <span class="inline-block py-1 px-3 border border-primary text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-4">1 Progetto</span>
-                        <h2 class="font-display font-bold text-4xl md:text-6xl text-white uppercase leading-none mb-5">Residenziale</h2>
-                        <span class="inline-flex items-center gap-3 text-white group-hover:text-primary transition-colors">
-                            <span class="font-bold uppercase tracking-widest text-xs border-b border-white group-hover:border-primary pb-1">Scopri i Progetti</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="transform group-hover:translate-x-2 transition-transform">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </span>
-                    </div>
-                </button>
-
-                <!-- Divider (desktop only) -->
-                <div class="hidden md:block w-px bg-white/20 relative z-10">
-                    <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-white/50 text-[10px] font-bold uppercase tracking-widest py-2 px-2">o</span>
+            <!-- Slide 1 -->
+            <div class="slide active absolute inset-0 w-full h-full">
+                <div class="absolute inset-0 bg-cover bg-center"
+                    style="background-image: url('assets/img/locale-frascati-hero.webp');" role="img" aria-label="Vista del locale commerciale ristrutturato a Frascati">
                 </div>
-
-                <!-- Panel: Commerciale -->
-                <button type="button" data-category-choice="commerciale"
-                    class="group relative flex-1 h-1/2 md:h-full overflow-hidden focus:outline-none">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                        style="background-image: url('assets/img/negozio-roma-hero-2.webp');" role="img"
-                        aria-label="Negozio a Roma ristrutturato, oggi salone di parrucchiere e centro estetico"></div>
-                    <div class="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-colors duration-500"></div>
-                    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-                        <span class="inline-block py-1 px-3 border border-primary text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-4">2 Progetti</span>
-                        <h2 class="font-display font-bold text-4xl md:text-6xl text-white uppercase leading-none mb-5">Commerciale</h2>
-                        <span class="inline-flex items-center gap-3 text-white group-hover:text-primary transition-colors">
-                            <span class="font-bold uppercase tracking-widest text-xs border-b border-white group-hover:border-primary pb-1">Scopri i Progetti</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+                <div class="container relative h-full flex items-center px-6 z-10">
+                    <div class="max-w-2xl slide-content">
+                        <span
+                            class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Commerciale</span>
+                        <h1
+                            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
+                            Locale<br>Frascati
+                        </h1>
+                        <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
+                            Ristrutturazione completa di uno spazio commerciale nel centro di Frascati. Design moderno,
+                            finiture su misura e impianti a norma.
+                        </p>
+                        <a href="progetto-locale-frascati.html"
+                            class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
+                            <span
+                                class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
+                                il Progetto</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="transform group-hover:translate-x-2 transition-transform">
+                                stroke-linejoin="round"
+                                class="transform group-hover:translate-x-2 transition-transform">
                                 <line x1="5" y1="12" x2="19" y2="12" />
                                 <polyline points="12 5 19 12 12 19" />
                             </svg>
-                        </span>
+                        </a>
                     </div>
-                </button>
-
+                </div>
             </div>
 
-            <!-- Scroll hint / view all -->
-            <button type="button" data-category-choice="tutti"
-                class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white/70 hover:text-primary transition-colors flex-col items-center gap-2">
-                <span class="text-[10px] font-bold uppercase tracking-[0.3em]">Vedi Tutti</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="animate-bounce">
-                    <polyline points="6 9 12 15 18 9" />
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 w-full h-full">
+                <div class="absolute inset-0 bg-cover bg-center"
+                    style="background-image: url('assets/img/residenza-grottaferrata-hero.webp');" role="img" aria-label="Appartamento ristrutturato a Frascati con mattoni a vista">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+                <div class="container relative h-full flex items-center px-6 z-10">
+                    <div class="max-w-2xl slide-content">
+                        <span
+                            class="inline-block py-1 px-3 border border-primary text-primary text-xs font-bold tracking-widest uppercase mb-6">Residenziale</span>
+                        <h2
+                            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-none mb-6">
+                            Appartamento<br>a Frascati
+                        </h2>
+                        <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
+                            Ristrutturazione completa di un appartamento su due livelli di 90 mq. Mattoni a vista,
+                            controsoffitti LED e finiture di pregio.
+                        </p>
+                        <a href="progetto-appartamento-frascati.html"
+                            class="inline-flex items-center gap-4 text-white hover:text-primary transition-colors group">
+                            <span
+                                class="font-bold uppercase tracking-widest text-sm border-b border-white group-hover:border-primary pb-1">Scopri
+                                il Progetto</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transform group-hover:translate-x-2 transition-transform">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="absolute bottom-10 right-10 md:right-20 flex items-center gap-6 z-20">
+            <button id="prev-slide"
+                class="text-white hover:text-primary transition-colors p-2 border border-white/20 rounded-full hover:border-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
                 </svg>
             </button>
-
-        </section>
-
-        <!-- Projects Grid -->
-        <section id="projects-grid-section" class="pt-12 pb-20 md:py-28 border-t border-white/10">
-            <div class="container">
-
-                <div class="hidden md:block text-center max-w-2xl mx-auto mb-12 scroll-reveal">
-                    <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
-                    <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-4">Portfolio</span>
-                    <h2 class="font-display font-bold text-3xl md:text-5xl uppercase text-white leading-tight">I Progetti Realizzati</h2>
-                </div>
-
-                <!-- Filter Tabs -->
-                <div class="flex flex-wrap justify-center gap-3 mb-14 scroll-reveal" style="transition-delay: 100ms;">
-                    <button type="button" data-filter="tutti"
-                        aria-pressed="true"
-                        class="filter-tab is-active px-6 py-3 border border-primary bg-primary text-secondary text-xs font-bold uppercase tracking-widest transition-colors">Tutti</button>
-                    <button type="button" data-filter="residenziale"
-                        aria-pressed="false"
-                        class="filter-tab px-6 py-3 border border-white/20 text-white/70 text-xs font-bold uppercase tracking-widest transition-colors hover:border-primary hover:text-primary">Residenziale</button>
-                    <button type="button" data-filter="commerciale"
-                        aria-pressed="false"
-                        class="filter-tab px-6 py-3 border border-white/20 text-white/70 text-xs font-bold uppercase tracking-widest transition-colors hover:border-primary hover:text-primary">Commerciale</button>
-                </div>
-
-                <!-- Grid -->
-                <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-
-                    <!-- Card: Locale Frascati (Commerciale) -->
-                    <a href="progetto-locale-frascati.html" data-category="commerciale"
-                        class="project-card group block scroll-reveal">
-                        <div class="relative aspect-[4/5] overflow-hidden mb-5">
-                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                style="background-image: url('assets/img/locale-frascati-hero.webp');" role="img"
-                                aria-label="Vista del locale commerciale ristrutturato a Frascati"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"></div>
-                            <span class="absolute top-4 left-4 inline-block py-1 px-3 bg-white/90 text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">Commerciale</span>
-                        </div>
-                        <h3 class="font-display font-bold text-2xl text-white uppercase leading-none mb-2">Locale Frascati</h3>
-                        <p class="text-white/60 text-sm leading-relaxed mb-4">Ristrutturazione completa di uno spazio commerciale nel centro di Frascati.</p>
-                        <span class="inline-flex items-center gap-3 text-white group-hover:text-primary transition-colors">
-                            <span class="font-bold uppercase tracking-widest text-xs border-b border-white/30 group-hover:border-primary pb-1">Scopri il Progetto</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="transform group-hover:translate-x-2 transition-transform">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </span>
-                    </a>
-
-                    <!-- Card: Residenza Frascati (Residenziale) -->
-                    <a href="progetto-appartamento-frascati.html" data-category="residenziale"
-                        class="project-card group block scroll-reveal" style="transition-delay: 100ms;">
-                        <div class="relative aspect-[4/5] overflow-hidden mb-5">
-                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                style="background-image: url('assets/img/residenza-frascati-hero.webp');" role="img"
-                                aria-label="Appartamento ristrutturato a Frascati con mattoni a vista"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"></div>
-                            <span class="absolute top-4 left-4 inline-block py-1 px-3 bg-white/90 text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">Residenziale</span>
-                        </div>
-                        <h3 class="font-display font-bold text-2xl text-white uppercase leading-none mb-2">Residenza Frascati</h3>
-                        <p class="text-white/60 text-sm leading-relaxed mb-4">Ristrutturazione completa di un appartamento su due livelli di 90 mq.</p>
-                        <span class="inline-flex items-center gap-3 text-white group-hover:text-primary transition-colors">
-                            <span class="font-bold uppercase tracking-widest text-xs border-b border-white/30 group-hover:border-primary pb-1">Scopri il Progetto</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="transform group-hover:translate-x-2 transition-transform">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </span>
-                    </a>
-
-                    <!-- Card: Negozio Roma (Commerciale) -->
-                    <a href="progetto-negozio-roma.html" data-category="commerciale"
-                        class="project-card group block scroll-reveal" style="transition-delay: 200ms;">
-                        <div class="relative aspect-[4/5] overflow-hidden mb-5">
-                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                style="background-image: url('assets/img/negozio-roma-hero-2.webp');" role="img"
-                                aria-label="Negozio a Roma ristrutturato, oggi salone di parrucchiere e centro estetico"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0"></div>
-                            <span class="absolute top-4 left-4 inline-block py-1 px-3 bg-white/90 text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">Commerciale</span>
-                        </div>
-                        <h3 class="font-display font-bold text-2xl text-white uppercase leading-none mb-2">Negozio Roma</h3>
-                        <p class="text-white/60 text-sm leading-relaxed mb-4">Ristrutturazione completa di un negozio a Roma, oggi salone di parrucchiere e centro estetico.</p>
-                        <span class="inline-flex items-center gap-3 text-white group-hover:text-primary transition-colors">
-                            <span class="font-bold uppercase tracking-widest text-xs border-b border-white/30 group-hover:border-primary pb-1">Scopri il Progetto</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="transform group-hover:translate-x-2 transition-transform">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </span>
-                    </a>
-
-                </div>
+            <div class="text-white font-display text-xl tracking-widest">
+                <span id="current-slide">01</span><span class="text-white/40 mx-2">/</span><span
+                    id="total-slides">02</span>
             </div>
-        </section>
+            <button id="next-slide"
+                class="text-white hover:text-primary transition-colors p-2 border border-white/20 rounded-full hover:border-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Quick Nav Strip (Bottom Left Overlay) -->
+        <div class="absolute bottom-10 left-6 md:left-20 z-20 hidden md:block">
+            <div class="flex gap-4">
+                <button
+                    class="w-20 h-16 bg-cover bg-center border-2 border-primary cursor-pointer transition-transform hover:scale-110 shadow-lg"
+                    style="background-image: url('assets/img/locale-frascati-hero.webp');"
+                    onclick="slider.goTo(0)"></button>
+                <button
+                    class="w-20 h-16 bg-cover bg-center border-2 border-transparent hover:border-primary cursor-pointer transition-transform hover:scale-110 opacity-70 hover:opacity-100 shadow-lg"
+                    style="background-image: url('assets/img/residenza-grottaferrata-hero.webp');"
+                    onclick="slider.goTo(1)"></button>
+            </div>
+        </div>
 
     </main>
 
+    <!-- Footer intentionally omitted or simplified for Fullscreen Layout?? 
+         Wait, concept said "3. Footer: Standard". 
+         But in a 100vh slider, the footer is usually below the fold (scrollable) or not there.
+         I will add it below the main section so user can scroll down to see it.
+    -->
+
     <!-- Footer (Standard) -->
-    <footer class="bg-[#0a0a0a] text-white relative z-30 border-t border-white/10">
+    <footer class="bg-white text-black relative z-30">
         <!-- Top Section: Contact Form Link/Anchor -->
         <section id="contact-form-section" class="relative py-24 bg-scroll md:bg-fixed bg-center bg-cover"
-            style="background-image: url('assets/img/bg-contatti-v2.webp');">
+            style="background-image: url('assets/img/bg-contatti.webp');" role="img" aria-label="Ambiente moderno ristrutturato con finiture di pregio">
             <div class="absolute inset-0 bg-black/70"></div>
             <div class="container relative z-10">
                 <div class="max-w-4xl mx-auto text-center mb-16 scroll-reveal">
@@ -316,7 +275,6 @@
                 </div>
 
                 <div class="max-w-3xl mx-auto scroll-reveal" style="transition-delay: 200ms;">
-                    <div id="form-feedback" class="form-feedback" role="status" aria-live="polite" tabindex="-1" hidden></div>
                     <form action="send-mail.php" method="POST" class="space-y-8">
                         <input type="text" name="_hp" class="hidden" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="_pagina" value="progetti.html">
@@ -370,23 +328,19 @@
         </section>
 
         <!-- Middle Section: Navigation & CTA -->
-        <section class="py-12 border-b border-white/10">
+        <section class="py-12 border-b border-gray-200">
             <div class="container flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="w-48 text-center md:text-left transform scale-125 origin-center md:origin-left">
-                    <a href="index.html"
-                        class="flex items-center justify-center md:justify-start gap-3 leading-none text-white transition-all duration-500">
-                        <img src="assets/img/logo-fr-icon.webp" alt="" width="240" height="220" class="h-10 w-auto shrink-0" loading="lazy">
-                        <span class="flex flex-col leading-none">
-                            <span
-                                class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
-                            <span
-                                class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
-                        </span>
+                    <a href="index.html" class="flex flex-col leading-none text-black transition-all duration-500">
+                        <span
+                            class="text-2xl md:text-3xl font-display font-bold tracking-tighter uppercase">Ferri</span>
+                        <span
+                            class="text-sm md:text-base tracking-[0.2em] uppercase font-medium text-primary">Ristrutturazioni</span>
                     </a>
                 </div>
                 <!-- Navigation -->
                 <nav
-                    class="flex flex-wrap justify-center gap-8 font-bold uppercase text-sm tracking-widest text-white/60">
+                    class="flex flex-wrap justify-center gap-8 font-bold uppercase text-sm tracking-widest text-gray-600">
                     <a href="chi-siamo.html" class="hover:text-primary transition-colors">Chi Siamo</a>
                     <a href="servizi.html" class="hover:text-primary transition-colors">Servizi</a>
                     <a href="progetti.html" class="text-primary hover:text-primary transition-colors">Progetti</a>
@@ -396,9 +350,9 @@
                 <!-- CTA -->
                 <div>
                     <a href="tel:+393408832362"
-                        class="inline-block group relative border border-white/20 px-6 py-3 font-bold uppercase text-xs tracking-widest overflow-hidden hover:text-white transition-colors bg-transparent text-white/60">
+                        class="inline-block group relative border border-black px-6 py-3 font-bold uppercase text-xs tracking-widest overflow-hidden hover:text-white transition-colors bg-transparent text-black">
                         <span
-                            class="absolute inset-0 w-full h-full bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
+                            class="absolute inset-0 w-full h-full bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></span>
                         <span class="relative z-10">Chiama Ora</span>
                     </a>
                 </div>
@@ -406,32 +360,32 @@
         </section>
 
         <!-- Accreditations Section -->
-        <section class="py-12">
+        <section class="py-12 bg-white">
             <div class="container flex flex-wrap justify-center items-center gap-12 opacity-80">
                 <div
-                    class="flex items-center gap-2 border-2 border-white/10 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-white/40 text-xl">SOA</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-white/50 leading-tight">Attestazione<br>Qualificazione</div>
+                    class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
+                    <div class="font-bold text-gray-400 text-xl">SOA</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Attestazione<br>Qualificazione</div>
                 </div>
                 <div
-                    class="flex items-center gap-2 border-2 border-white/10 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-white/40 text-xl">DURC</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-white/50 leading-tight">Regolarità<br>Contributiva</div>
+                    class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
+                    <div class="font-bold text-gray-400 text-xl">DURC</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Regolarità<br>Contributiva</div>
                 </div>
                 <div
-                    class="flex items-center gap-2 border-2 border-white/10 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
-                    <div class="font-bold text-white/40 text-xl">CEI</div>
-                    <div class="text-[0.6rem] uppercase font-bold text-white/50 leading-tight">Conformità<br>Impianti
+                    class="flex items-center gap-2 border-2 border-gray-200 px-4 py-2 rounded grayscale hover:grayscale-0 transition-all">
+                    <div class="font-bold text-gray-400 text-xl">CEI</div>
+                    <div class="text-[0.6rem] uppercase font-bold text-gray-500 leading-tight">Conformità<br>Impianti
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Copyright Section -->
-        <section class="py-6 border-t border-white/10">
-            <div class="container flex flex-col md:flex-row justify-between items-center text-xs text-white/60 gap-4">
+        <section class="py-6 bg-white border-t border-gray-200">
+            <div class="container flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
                 <p>&copy; 2026 Ferri Ristrutturazioni. P.IVA 18274541004 — Erede della tradizione di Marco Ferri Impresa Edile — P.IVA 17169311002. Tutti i diritti riservati.</p>
-                <p class="mt-1 text-white/40">Proudly Made by <a href="https://www.drugolab.it" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Drugo-dev84</a></p>
+                <p class="mt-1 text-gray-400">Proudly Made by <a href="https://www.drugolab.it" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Drugo-dev84</a></p>
                 <div class="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-0 items-center">
                     <a href="https://www.iubenda.com/privacy-policy/10210722"
                         class="iubenda-white iubenda-noiframe iubenda-embed hover:text-primary transition-colors"
@@ -441,8 +395,19 @@
                         title="Cookie Policy ">Cookie Policy</a>
                     <script
                         type="text/javascript">(function (w, d) { var loader = function () { var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s, tag); }; if (w.addEventListener) { w.addEventListener("load", loader, false); } else if (w.attachEvent) { w.attachEvent("onload", loader); } else { w.onload = loader; } })(window, document);</script>
-                    <div class="flex gap-4 border-l border-white/10 pl-6 ml-2">
-                        <a href="https://www.instagram.com/ferriristrutturazioni/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors" aria-label="Instagram">
+                    <div class="flex gap-4 border-l border-gray-300 pl-6 ml-2">
+                        <a href="404.html" class="hover:text-primary transition-colors" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="404.html" class="hover:text-primary transition-colors" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -457,48 +422,73 @@
         </section>
     </footer>
 
-    <script src="assets/js/main.js?v=20260917" defer></script>
+    <script src="assets/js/main.js" defer></script>
     <script>
-        // Inline script for Projects page: category chooser + grid filter
+        // Inline script for Projects page specific logic (Slider)
         document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.filter-tab');
-            const cards = document.querySelectorAll('.project-card');
-            const gridSection = document.getElementById('projects-grid-section');
-            const choicePanels = document.querySelectorAll('[data-category-choice]');
+            const slides = document.querySelectorAll('.slide');
+            const thumbs = document.querySelectorAll('.absolute.bottom-10.left-6 button'); // Quick Nav Thumbs
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const currentCounter = document.getElementById('current-slide');
+            const totalCounter = document.getElementById('total-slides');
 
-            function setActiveTab(filter) {
-                tabs.forEach(tab => {
-                    const isActive = tab.dataset.filter === filter;
-                    tab.classList.toggle('is-active', isActive);
-                    tab.classList.toggle('bg-primary', isActive);
-                    tab.classList.toggle('border-primary', isActive);
-                    tab.classList.toggle('text-secondary', isActive);
-                    tab.classList.toggle('border-white/20', !isActive);
-                    tab.classList.toggle('text-white/70', !isActive);
-                    tab.classList.toggle('hover:border-primary', !isActive);
-                    tab.classList.toggle('hover:text-primary', !isActive);
-                    tab.setAttribute('aria-pressed', String(isActive));
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            totalCounter.textContent = String(totalSlides).padStart(2, '0');
+
+            function updateSlider(index) {
+                // Bounds check
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+
+                currentIndex = index;
+
+                // Update Active Slide
+                slides.forEach((slide, i) => {
+                    if (i === currentIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
                 });
+
+                // Update Thumbs active state
+                thumbs.forEach((thumb, i) => {
+                    if (i === currentIndex) {
+                        thumb.classList.add('border-primary');
+                        thumb.classList.remove('border-transparent', 'opacity-70');
+                    } else {
+                        thumb.classList.remove('border-primary');
+                        thumb.classList.add('border-transparent', 'opacity-70');
+                    }
+                });
+
+                // Update Counter
+                currentCounter.textContent = String(currentIndex + 1).padStart(2, '0');
             }
 
-            function applyFilter(filter) {
-                cards.forEach(card => {
-                    const show = filter === 'tutti' || card.dataset.category === filter;
-                    card.classList.toggle('hidden', !show);
-                });
-                setActiveTab(filter);
+            // Public method for onclick
+            window.slider = {
+                goTo: (index) => updateSlider(index)
+            };
+
+            // Events
+            nextBtn.addEventListener('click', () => updateSlider(currentIndex + 1));
+            prevBtn.addEventListener('click', () => updateSlider(currentIndex - 1));
+
+            // Optional Autoplay (rispetta prefers-reduced-motion)
+            let autoplayInterval;
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                autoplayInterval = setInterval(() => updateSlider(currentIndex + 1), 8000);
             }
 
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => applyFilter(tab.dataset.filter));
-            });
-
-            choicePanels.forEach(panel => {
-                panel.addEventListener('click', () => {
-                    applyFilter(panel.dataset.categoryChoice);
-                    gridSection.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
+            // Pause on interaction
+            const stopAutoplay = () => clearInterval(autoplayInterval);
+            nextBtn.addEventListener('click', stopAutoplay);
+            prevBtn.addEventListener('click', stopAutoplay);
+            thumbs.forEach(btn => btn.addEventListener('click', stopAutoplay));
         });
     </script>
     <!-- Sticky WhatsApp Button (Mobile Only) -->
