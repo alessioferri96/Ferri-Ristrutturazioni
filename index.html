@@ -478,6 +478,19 @@
                     <a href="https://g.page/r/CTkcnK2mCoY1EBM/review" target="_blank" rel="noopener noreferrer" data-review-rating="5" class="review-star p-1 hover:text-white hover:scale-110 transition-transform" aria-label="Dai 5 stelle e apri Google"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></a>
                 </div>
                 <p class="text-white/60 text-sm" data-review-message>Lascia una recensione toccando una stella.</p>
+                <div class="mt-12 pt-12 border-t border-white/10 text-left max-w-2xl mx-auto">
+                    <h3 class="font-display text-2xl uppercase text-white mb-3">Racconta la tua esperienza</h3>
+                    <p class="text-white/60 mb-6">La tua recensione sara visibile solo dopo la nostra approvazione.</p>
+                    <form action="submit-review.php" method="POST" class="space-y-4">
+                        <input type="text" name="_review_hp" class="hidden" tabindex="-1" autocomplete="off">
+                        <input name="review_name" required maxlength="100" placeholder="Il tuo nome" class="w-full bg-transparent border border-white/30 p-3 text-white">
+                        <select name="review_rating" required class="w-full bg-secondary border border-white/30 p-3 text-white"><option value="">Il tuo voto</option><option value="5">5 stelle</option><option value="4">4 stelle</option><option value="3">3 stelle</option><option value="2">2 stelle</option><option value="1">1 stella</option></select>
+                        <textarea name="review_text" required minlength="10" maxlength="1200" rows="5" placeholder="Scrivi la tua recensione" class="w-full bg-transparent border border-white/30 p-3 text-white"></textarea>
+                        <label class="flex gap-3 text-sm text-white/70"><input type="checkbox" name="review_privacy" required> Ho letto e accetto la Privacy Policy.</label>
+                        <button class="border border-primary bg-primary text-secondary font-bold uppercase px-6 py-3">Invia recensione</button>
+                    </form>
+                    <div id="site-reviews" class="mt-12 grid gap-4"></div>
+                </div>
             </div>
         </section>
 

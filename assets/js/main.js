@@ -18,6 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const siteReviews = document.getElementById('site-reviews');
+    if (siteReviews) {
+        fetch('reviews-feed.php').then((response) => response.ok ? response.json() : { reviews: [] }).then(({ reviews }) => {
+            reviews.forEach((review) => {
+                const item = document.createElement('article');
+                item.className = 'border border-white/10 p-5';
+                item.innerHTML = `<div class="text-primary">${'★'.repeat(review.rating)}<span class="text-white/30">${'★'.repeat(5 - review.rating)}</span></div>`;
+                const name = document.createElement('strong'); name.className = 'block text-white mt-2'; name.textContent = review.customer_name;
+                const text = document.createElement('p'); text.className = 'text-white/70 mt-2'; text.textContent = review.review_text;
+                item.append(name, text); siteReviews.append(item);
+            });
+        }).catch(() => {});
+    }
+
     /* =========================================
        1. Sticky Header Logic
        ========================================= */
