@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="chi-siamo.html" class="text-white/80 hover:text-primary transition-colors">Chi siamo</a>
             <a href="servizi.html" class="text-white/80 hover:text-primary transition-colors">Servizi</a>
             <a href="progetti.html" class="text-white/80 hover:text-primary transition-colors">Progetti</a>
+            <a href="index.html#recensioni" class="text-white/80 hover:text-primary transition-colors">Recensioni</a>
             <a href="contatti.html" class="inline-flex items-center min-h-11 px-5 border border-primary bg-primary text-secondary hover:bg-primary-dark hover:border-primary-dark transition-colors">Richiedi sopralluogo</a>
         `;
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="chi-siamo.html" class="hover:text-primary transition-colors">Chi Siamo</a>
             <a href="servizi.html" class="hover:text-primary transition-colors">Servizi</a>
             <a href="progetti.html" class="hover:text-primary transition-colors">Progetti</a>
+            <a href="index.html#recensioni" class="hover:text-primary transition-colors">Recensioni</a>
             <a href="contatti.html" class="hover:text-primary transition-colors">Contatti</a>
         </nav>
         
