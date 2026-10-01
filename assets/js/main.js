@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const reviewStars = document.querySelectorAll('[data-review-rating]');
+    const reviewMessage = document.querySelector('[data-review-message]');
+
+    reviewStars.forEach((star) => {
+        star.addEventListener('click', () => {
+            const rating = Number(star.dataset.reviewRating);
+
+            reviewStars.forEach((item) => {
+                const isSelected = Number(item.dataset.reviewRating) <= rating;
+                item.classList.toggle('text-primary', isSelected);
+                item.classList.toggle('text-white/30', !isSelected);
+            });
+
+            if (reviewMessage) {
+                reviewMessage.textContent = `Hai scelto ${rating} ${rating === 1 ? 'stella' : 'stelle'}. Completa il voto su Google.`;
+            }
+        });
+    });
 
     /* =========================================
        1. Sticky Header Logic
