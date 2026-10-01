@@ -3,6 +3,12 @@ declare(strict_types=1);
 session_start();
 require __DIR__ . '/reviews-service.php';
 
+function review_display_date(string $value): string {
+    return (new DateTimeImmutable($value, new DateTimeZone('UTC')))
+        ->setTimezone(new DateTimeZone('Europe/Rome'))
+        ->format('d/m/Y H:i');
+}
+
 $configPath = __DIR__ . '/../reviews-config.php';
 $config = is_file($configPath) ? require $configPath : [];
 $error = '';
@@ -23,4 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['id'
     header('Location: gestione-recensioni.php'); exit;
 }
 $reviews = $pdo->query('SELECT * FROM site_reviews ORDER BY status ASC, created_at DESC')->fetchAll();
-?><!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gestione recensioni</title><body style="margin:0;background:#101010;color:#fff;font:16px Arial;padding:32px"><main style="max-width:900px;margin:auto"><form method="post" style="float:right"><button name="logout">Esci</button></form><h1>Gestione recensioni</h1><p>Le recensioni in attesa non sono visibili ai clienti.</p><?php foreach ($reviews as $review): ?><article style="border:1px solid #444;padding:20px;margin:16px 0"><strong><?= htmlspecialchars($review['customer_name']) ?></strong> &middot; <?= str_repeat('★', (int)$review['rating']) ?><span style="color:#888"><?= str_repeat('★', 5-(int)$review['rating']) ?></span><p><?= nl2br(htmlspecialchars($review['review_text'])) ?></p><small><?= htmlspecialchars($review['status']) ?> - <?= htmlspecialchars($review['created_at']) ?></small><form method="post" style="margin-top:14px;display:flex;gap:8px"><input type="hidden" name="id" value="<?= (int)$review['id'] ?>"><?php if ($review['status'] === 'pending'): ?><button name="action" value="publish">Pubblica</button><?php else: ?><button name="action" value="pending">Nascondi</button><?php endif; ?><button name="action" value="delete" onclick="return confirm('Eliminare questa recensione?')">Elimina</button></form></article><?php endforeach; ?></main></body></html>
+?><!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gestione recensioni</title><body style="margin:0;background:#101010;color:#fff;font:16px Arial;padding:32px"><main style="max-width:900px;margin:auto"><form method="post" style="float:right"><button name="logout">Esci</button></form><h1>Gestione recensioni</h1><p>Le recensioni in attesa non sono visibili ai clienti.</p><?php foreach ($reviews as $review): ?><article style="border:1px solid #444;padding:20px;margin:16px 0"><strong><?= htmlspecialchars($review['customer_name']) ?></strong> &middot; <?= str_repeat('★', (int)$review['rating']) ?><span style="color:#888"><?= str_repeat('★', 5-(int)$review['rating']) ?></span><p><?= nl2br(htmlspecialchars($review['review_text'])) ?></p><small><?= htmlspecialchars($review['status']) ?> - <?= review_display_date($review['created_at']) ?></small><form method="post" style="margin-top:14px;display:flex;gap:8px"><input type="hidden" name="id" value="<?= (int)$review['id'] ?>"><?php if ($review['status'] === 'pending'): ?><button name="action" value="publish">Pubblica</button><?php else: ?><button name="action" value="pending">Nascondi</button><?php endif; ?><button name="action" value="delete" onclick="return confirm('Eliminare questa recensione?')">Elimina</button></form></article><?php endforeach; ?></main></body></html>
