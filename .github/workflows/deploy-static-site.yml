@@ -8,16 +8,43 @@ on:
       - 'docs/**'
       - '.agent/**'
       - 'agents/**'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   web-deploy:
     name: 🎉 Deploy Static Site
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: test
+          MYSQL_DATABASE: reviews_auth_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -ptest"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v5
-      
+
+      - name: Set up PHP for authentication checks
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_mysql
+          coverage: none
+
+      - name: Check PHP and Google Authenticator access
+        env:
+          REVIEWS_TEST_DSN: mysql:host=127.0.0.1;port=3306;dbname=reviews_auth_test;charset=utf8mb4
+        run: |
+          find . -path ./node_modules -prune -o -name '*.php' -print0 | xargs -0 -n 1 php -l
+          php tests/reviews-auth-test.php
+
       - name: 📂 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
@@ -26,8 +53,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # Mappa la cartella root locale nella cartella di destinazione remota
           local-dir: ./
-          server-dir: ${{ secrets.FTP_TARGET_DIR || '/' }} 
-          
+          server-dir: ${{ secrets.FTP_TARGET_DIR || '/' }}
+
           # Escludi file non necessari al sito live
           exclude: |
             **/.git*
@@ -37,6 +64,7 @@ jobs:
             .github/**
             agents/**
             docs/**
+            tests/**
             resources/**
             README.md
             GEMINI.md
