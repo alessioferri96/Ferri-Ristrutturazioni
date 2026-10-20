@@ -163,10 +163,15 @@
                         <form action="send-mail.php" method="POST" class="space-y-4">
                             <input type="text" name="_hp" class="hidden" tabindex="-1" autocomplete="off">
                             <input type="hidden" name="_pagina" value="contatti.html">
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <div>
                                     <label for="name" class="sr-only">Nome</label>
                                     <input type="text" id="name" name="name" required placeholder="Nome"
+                                        class="w-full bg-white/5 border border-white/10 p-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary transition-colors">
+                                </div>
+                                <div>
+                                    <label for="surname" class="sr-only">Cognome</label>
+                                    <input type="text" id="surname" name="surname" required placeholder="Cognome"
                                         class="w-full bg-white/5 border border-white/10 p-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary transition-colors">
                                 </div>
                                 <div>

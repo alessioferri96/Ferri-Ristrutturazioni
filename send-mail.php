@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Sanitizzazione input
 $nome = htmlspecialchars(trim($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8');
+$cognome = htmlspecialchars(trim($_POST['surname'] ?? ''), ENT_QUOTES, 'UTF-8');
 $telefono = htmlspecialchars(trim($_POST['phone'] ?? ''), ENT_QUOTES, 'UTF-8');
 $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $messaggio = htmlspecialchars(trim($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8');
@@ -33,6 +34,7 @@ $ancora = '#form-feedback';
 // Validazione campi obbligatori
 $errori = [];
 if (empty($nome)) $errori[] = 'Nome obbligatorio';
+if (in_array($pagina_origine, ['index.html', 'contatti.html'], true) && empty($cognome)) $errori[] = 'Cognome obbligatorio';
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errori[] = 'Email non valida';
 if (empty($messaggio)) $errori[] = 'Messaggio obbligatorio';
 if (!$privacy) $errori[] = 'Devi accettare la Privacy Policy';
@@ -55,6 +57,7 @@ $oggetto = $oggetto_base . ' [da ' . $pagina_origine . ']';
 
 $corpo = "Nuovo messaggio ricevuto dal sito web:\n\n";
 $corpo .= "Nome: {$nome}\n";
+if (!empty($cognome)) $corpo .= "Cognome: {$cognome}\n";
 if (!empty($telefono)) $corpo .= "Telefono: {$telefono}\n";
 $corpo .= "Email: {$email}\n";
 $corpo .= "Pagina: {$pagina_origine}\n\n";

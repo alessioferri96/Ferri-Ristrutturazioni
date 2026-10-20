@@ -515,12 +515,18 @@
                     <form action="send-mail.php" method="POST" class="space-y-8">
                         <input type="text" name="_hp" class="hidden" tabindex="-1" autocomplete="off">
                         <input type="hidden" name="_pagina" value="index.html">
-                        <div class="grid md:grid-cols-2 gap-12">
+                        <div class="grid md:grid-cols-3 gap-12">
                             <div class="relative group">
                                 <label class="sr-only" for="name">Nome</label>
                                 <input type="text" id="name" name="name" required
                                     class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
                                     placeholder="Nome">
+                            </div>
+                            <div class="relative group">
+                                <label class="sr-only" for="surname">Cognome</label>
+                                <input type="text" id="surname" name="surname" required
+                                    class="w-full bg-transparent border-b border-white/50 pt-4 pb-2 text-white placeholder-gray-300 focus:outline-none focus:border-white transition-colors text-lg"
+                                    placeholder="Cognome">
                             </div>
                             <div class="relative group">
                                 <label class="sr-only" for="phone">Telefono</label>
