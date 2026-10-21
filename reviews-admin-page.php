@@ -17,6 +17,8 @@ $csrf = reviews_auth_escape($_SESSION['auth_csrf']);
         .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px}.card{background:#191919;border:1px solid #414141;padding:clamp(20px,3vw,32px);min-width:0}.section-link{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;transition:border-color .2s}.section-link:hover,.section-link:focus-visible{border-color:#fff}.section-link p{flex:1}.section-link .button{margin-top:16px}.eyebrow{font-size:13px;letter-spacing:2px;color:#aaa;margin-bottom:22px}
         .qr-card{text-align:center}.qr-image{box-sizing:content-box;width:min(240px,calc(100% - 40px));aspect-ratio:1;background:#fff;padding:20px;margin:24px auto}.qr-image img,.qr-image canvas{display:block;width:100%;height:auto}.destination{display:block;overflow-wrap:anywhere;font-size:14px;color:#ccc}.back{display:inline-block;color:#bbb;margin-bottom:12px;font-size:14px}
         .review{margin:20px 0;border:1px solid #444;padding:24px;overflow-wrap:anywhere}.review p{white-space:normal}.review small{color:#aaa}.review-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.error{color:#ffb3b3}.empty{padding:28px;border:1px solid #444}.stars-empty{color:#666}
+        .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:26px 0}.metric h2{font-size:17px;color:#ccc}.metric-number{font-size:34px;font-weight:bold;margin:6px 0}.metric-label{display:block;font-size:13px;color:#bbb;font-weight:normal}.views-color{color:#d5ad70}.visitors-color{color:#76c7ff}.periods{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.periods a[aria-current=page]{background:#fff;color:#111;border-color:#fff}.chart-scroll{overflow-x:auto}.chart-scroll svg{display:block;width:100%;min-width:560px;height:auto}.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;margin:0 0 20px}.stats-note{font-size:14px;color:#aaa}.stats-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:14px}.stats-table th,.stats-table td{padding:12px 8px;text-align:right;border-bottom:1px solid #444}.stats-table th:first-child,.stats-table td:first-child{text-align:left}.table-scroll{overflow-x:auto}summary{cursor:pointer}
+        @media(max-width:640px){.metrics{grid-template-columns:1fr}.metric-number{font-size:30px}}
         @media(max-width:640px){.grid{grid-template-columns:1fr;gap:18px}header a{font-size:19px}header{gap:12px}.review{padding:20px}}
     </style>
 </head>
@@ -66,6 +68,8 @@ $csrf = reviews_auth_escape($_SESSION['auth_csrf']);
         <noscript><p>Per visualizzare i QR code abilita JavaScript. Puoi aprire le destinazioni usando i pulsanti.</p></noscript>
         <script src="assets/js/vendor/qrcode.min.js" defer></script>
         <script src="assets/js/admin-qrcodes.js" defer></script>
+    <?php elseif ($section === 'statistiche'): ?>
+        <?php require __DIR__ . '/statistics-panel.php'; ?>
     <?php else: ?>
         <h1>Le tue sezioni</h1>
         <p>Scegli cosa vuoi aprire.</p>
@@ -81,6 +85,12 @@ $csrf = reviews_auth_escape($_SESSION['auth_csrf']);
                 <h2>QR code</h2>
                 <p>Mostra i codici per raggiungere il sito web e il profilo Instagram.</p>
                 <span class="button">Mostra QR code →</span>
+            </a>
+            <a class="card section-link" href="gestione-recensioni.php?sezione=statistiche">
+                <span class="eyebrow" aria-hidden="true">03</span>
+                <h2>Statistiche visite</h2>
+                <p>Consulta il grafico delle visualizzazioni e dei visitatori unici stimati.</p>
+                <span class="button">Apri statistiche →</span>
             </a>
         </nav>
     <?php endif; ?>

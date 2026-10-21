@@ -102,7 +102,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$error && isset($_POST['action'], 
     if ($_POST['action'] === 'delete') $pdo->prepare('DELETE FROM site_reviews WHERE id=?')->execute([$id]);
     header('Location: gestione-recensioni.php?sezione=recensioni', true, 303); exit;
 }
-$section = in_array($_GET['sezione'] ?? '', ['recensioni', 'qrcode'], true) ? $_GET['sezione'] : '';
+$section = in_array($_GET['sezione'] ?? '', ['recensioni', 'qrcode', 'statistiche'], true) ? $_GET['sezione'] : '';
 $reviews = $section === 'recensioni' ? $pdo->query('SELECT * FROM site_reviews ORDER BY status ASC, created_at DESC')->fetchAll() : [];
+$statistics = null;
+if ($section === 'statistiche') {
+    require __DIR__ . '/statistics-service.php';
+    try {
+        statistics_schema($pdo);
+        $statistics = statistics_report($pdo, ($_GET['periodo'] ?? '') === '7' ? 7 : 30);
+    } catch (Throwable $exception) {
+        error_log('Statistics dashboard unavailable: ' . get_class($exception));
+        $error = 'Statistiche momentaneamente non disponibili. Riprova tra poco.';
+    }
+}
 define('REVIEWS_ADMIN_PAGE', true);
 require __DIR__ . '/reviews-admin-page.php';

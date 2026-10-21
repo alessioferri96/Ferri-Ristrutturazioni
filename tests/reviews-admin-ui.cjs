@@ -19,9 +19,10 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
             for (const [name, segment] of Object.entries(sections)) {
                 await page.setContent((head + segment + '</main></body></html>').replace(/<script[\s\S]*?<\/script>/g, '').replace(/<\?[\s\S]*?\?>/g, 'test'));
                 if (name === 'menu') {
-                    assert.equal(await page.locator('nav .section-link').count(), 2);
+                    assert.equal(await page.locator('nav .section-link').count(), 3);
                     assert.equal(await page.getByRole('link', { name: /Gestione recensioni/ }).getAttribute('href'), 'gestione-recensioni.php?sezione=recensioni');
                     assert.equal(await page.getByRole('link', { name: /QR code/ }).getAttribute('href'), 'gestione-recensioni.php?sezione=qrcode');
+                    assert.equal(await page.getByRole('link', { name: /Statistiche visite/ }).getAttribute('href'), 'gestione-recensioni.php?sezione=statistiche');
                 } else {
                     const expected = ['https://www.ferriristrutturazioni.com/', 'https://www.instagram.com/ferriristrutturazioni/'];
                     assert.deepEqual(await page.locator('[data-qr-url]').evaluateAll(elements => elements.map(element => element.dataset.qrUrl)), expected);
@@ -44,6 +45,6 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
             }
             await page.close();
         }
-        console.log('Two-section dashboard, QR destinations and mobile layout checks passed.');
+        console.log('Three-section dashboard, QR destinations and mobile layout checks passed.');
     } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });
