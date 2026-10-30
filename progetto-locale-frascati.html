@@ -11,7 +11,7 @@
     <meta name="description"
         content="Ristrutturazione completa di uno spazio commerciale nel centro di Frascati. Design moderno, finiture su misura e impianti a norma.">
     <link rel="canonical" href="https://www.ferriristrutturazioni.com/progetto-locale-frascati.html">
-    <link rel="preload" as="image" href="assets/img/locale-frascati-hero.webp">
+    <link rel="preload" as="image" href="assets/img/locale-frascati-20261030-panoramica.webp">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/oswald-latin.woff2">
     <meta property="og:title" content="Locale Frascati | Ferri Ristrutturazioni">
     <meta property="og:description" content="Ristrutturazione completa di uno spazio commerciale nel centro di Frascati. Design moderno, finiture su misura e impianti a norma.">
@@ -19,10 +19,10 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="it_IT">
     <meta property="og:site_name" content="Ferri Ristrutturazioni">
-    <meta property="og:image" content="https://www.ferriristrutturazioni.com/assets/img/locale-frascati-hero.webp">
+    <meta property="og:image" content="https://www.ferriristrutturazioni.com/assets/img/locale-frascati-20261030-panoramica.webp">
     <meta property="og:image:alt" content="Ristrutturazione locale commerciale a Frascati - Ferri Ristrutturazioni">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.ferriristrutturazioni.com/assets/img/locale-frascati-hero.webp">
+    <meta name="twitter:image" content="https://www.ferriristrutturazioni.com/assets/img/locale-frascati-20261030-panoramica.webp">
 
     <!-- Self-hosted Fonts -->
     <link rel="stylesheet" href="assets/css/fonts.css?v=20260919b">
@@ -36,9 +36,11 @@
     <!-- Editorial Font Class -->
     <style>
         .font-editorial { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
-        .img-enhance { filter: contrast(1.08) saturate(1.12) brightness(1.03); }
-        .img-enhance-gallery { filter: contrast(1.08) saturate(1.12) brightness(1.03); transition: filter 0.7s ease, transform 1s ease; }
-        .group:hover .img-enhance-gallery { filter: contrast(1) saturate(1) brightness(1); }
+        .img-enhance-gallery { transition: transform 1s ease; }
+        #pid-slider > .ba-slider-media:first-child img { filter: none; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .gallery-item:focus-visible { outline: 2px solid #d5ad70; outline-offset: 3px; }
+        @media (max-width: 767px) { #project-hero { background-position: 32% center; } }
     </style>
 
     <!-- JSON-LD Structured Data -->
@@ -49,7 +51,7 @@
       "name": "Ristrutturazione locale commerciale a Frascati",
       "description": "Ristrutturazione completa di uno spazio commerciale nel centro di Frascati con design moderno, finiture su misura e impianti a norma.",
       "url": "https://www.ferriristrutturazioni.com/progetto-locale-frascati.html",
-      "image": "https://www.ferriristrutturazioni.com/assets/img/locale-frascati-hero.webp",
+      "image": "https://www.ferriristrutturazioni.com/assets/img/locale-frascati-20261030-panoramica.webp",
       "creator": {
         "@type": "LocalBusiness",
         "name": "Ferri Ristrutturazioni",
@@ -128,8 +130,8 @@
     <main id="main-content">
 
         <!-- Hero Full-Width -->
-        <section class="relative min-h-[100svh] flex items-end overflow-hidden bg-cover bg-center bg-scroll md:bg-fixed"
-            style="background-image: url('assets/img/locale-frascati-hero.webp');">
+        <section id="project-hero" class="relative min-h-[100svh] flex items-end overflow-hidden bg-cover bg-center bg-scroll md:bg-fixed"
+            style="background-image: url('assets/img/locale-frascati-20261030-panoramica.webp');">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/50 to-black/20"></div>
             <div class="container relative z-10 pb-20 md:pb-32 px-6">
                 <div class="mb-8">
@@ -198,7 +200,7 @@
         <!-- Full-Width Image -->
         <section class="relative h-[50vh] sm:h-[60vh] md:h-[90vh] overflow-hidden">
             <div class="absolute inset-0 bg-cover bg-center img-enhance"
-                style="background-image: url('assets/img/locale-frascati-fullwidth.webp');" role="img" aria-label="Panoramica del locale ristrutturato con struttura in pietra e acciaio">
+                style="background-image: url('assets/img/locale-frascati-20261030-dopo.webp');" role="img" aria-label="Il locale a lavori conclusi, con muratura in pietra, travi in acciaio e arredi">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-40"></div>
         </section>
@@ -207,9 +209,9 @@
         <section class="py-20 md:py-32 bg-[#0a0a0a]">
             <div class="container max-w-6xl mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-                    <div class="relative h-[300px] sm:h-[400px] md:h-[650px] overflow-hidden order-2 md:order-1">
+                    <div class="relative overflow-hidden order-2 md:order-1" style="aspect-ratio:4/3;">
                         <div class="absolute inset-0 bg-cover bg-center img-enhance"
-                            style="background-image: url('assets/img/locale-frascati-dettagli.webp');" role="img" aria-label="Dettaglio delle murature in pietra e struttura in acciaio del locale">
+                            style="background-image: url('assets/img/locale-frascati-20261030-pietra.webp');" role="img" aria-label="Parete in pietra originale valorizzata dagli arredi e dall'illuminazione del locale finito">
                         </div>
                     </div>
                     <div class="order-1 md:order-2">
@@ -251,13 +253,13 @@
                 </p>
                 <div class="ba-slider" id="pid-slider" role="group" aria-label="Confronto immagini prima, durante e dopo la ristrutturazione del locale a Frascati">
                     <div class="ba-slider-media">
-                        <img src="locale-frascati-2026-dopo.jpeg" alt="Il locale dopo la ristrutturazione, muratura in pietra e struttura in acciaio a vista" loading="lazy">
+                        <img src="assets/img/locale-frascati-20261030-dopo.webp" srcset="assets/img/locale-frascati-20261030-dopo-800.webp 800w, assets/img/locale-frascati-20261030-dopo.webp 1448w" sizes="(max-width:767px) 100vw, 1152px" alt="Il locale dopo la ristrutturazione, con parete in pietra, travi in acciaio, illuminazione e arredi" width="1448" height="1086" loading="lazy" decoding="async">
                     </div>
                     <div class="ba-slider-media" id="pid-layer-intermedio">
                         <img src="locale-frascati-2026-durante.jpeg" alt="Il locale durante i lavori, struttura in acciaio montata e pareti ancora grezze" loading="lazy">
                     </div>
                     <div class="ba-slider-media" id="pid-layer-prima">
-                        <img src="locale-frascati-2026-prima.jpeg" alt="Il locale prima della ristrutturazione, facciata storica abbandonata" loading="lazy">
+                        <img src="locale-frascati-2026-prima.jpeg" alt="Gli interni del locale prima del completamento della ristrutturazione, con murature grezze e materiali di cantiere" loading="lazy">
                     </div>
 
                     <span class="ba-slider-tag" style="left:1rem;">Prima</span>
@@ -286,33 +288,37 @@
                     <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
                     <span class="block text-[10px] font-sans font-bold tracking-[0.3em] uppercase text-primary mb-4">Gallery</span>
                     <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight">
-                        Il Cantiere in Immagini
+                        Dal Cantiere al Risultato
                     </h2>
                 </div>
                 <div class="grid grid-cols-2 gap-2 md:gap-3" id="gallery-grid">
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="0" tabindex="0" role="button" aria-label="Apri immagine 1 nella galleria">
-                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
-                            style="background-image: url('locale-frascati-2026-01.jpeg');" role="img" aria-label="Foto del cantiere del locale a Frascati, vista 1">
-                        </div>
+                        <img src="assets/img/locale-frascati-20261030-panoramica.webp" srcset="assets/img/locale-frascati-20261030-panoramica-800.webp 800w, assets/img/locale-frascati-20261030-panoramica.webp 1448w" sizes="(max-width:767px) 50vw, 620px" alt="Panoramica del locale ristrutturato e arredato" width="1448" height="1086" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="1" tabindex="0" role="button" aria-label="Apri immagine 2 nella galleria">
-                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
-                            style="background-image: url('locale-frascati-2026-04.jpeg');" role="img" aria-label="Foto del cantiere del locale a Frascati, vista 2">
-                        </div>
+                        <img src="assets/img/locale-frascati-20261030-pietra.webp" srcset="assets/img/locale-frascati-20261030-pietra-800.webp 800w, assets/img/locale-frascati-20261030-pietra.webp 1448w" sizes="(max-width:767px) 50vw, 620px" alt="Parete originale in pietra e zona salotto" width="1448" height="1086" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="2" tabindex="0" role="button" aria-label="Apri immagine 3 nella galleria">
-                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
-                            style="background-image: url('locale-frascati-2026-06.jpeg');" role="img" aria-label="Foto del cantiere del locale a Frascati, vista 3">
-                        </div>
+                        <img src="assets/img/locale-frascati-20261030-cucina.webp" srcset="assets/img/locale-frascati-20261030-cucina-800.webp 800w, assets/img/locale-frascati-20261030-cucina.webp 1448w" sizes="(max-width:767px) 50vw, 620px" alt="Cucina e finiture del locale a lavori conclusi" width="1448" height="1086" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105">
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
                     </div>
                     <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="3" tabindex="0" role="button" aria-label="Apri immagine 4 nella galleria">
-                        <div class="absolute inset-0 bg-cover bg-center img-enhance-gallery transition-transform duration-1000 group-hover:scale-105"
-                            style="background-image: url('locale-frascati-2026-dopo.jpeg');" role="img" aria-label="Foto del cantiere del locale a Frascati, vista 4">
-                        </div>
+                        <img src="assets/img/locale-frascati-20261030-bagno.webp" srcset="assets/img/locale-frascati-20261030-bagno-800.webp 600w, assets/img/locale-frascati-20261030-bagno.webp 1086w" sizes="(max-width:767px) 50vw, 620px" alt="Bagno ristrutturato con doccia e parete in pietra a vista" width="1086" height="1448" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105" style="object-position:center 58%;">
                         <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700"></div>
+                    </div>
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="4" tabindex="0" role="button" aria-label="Apri immagine 5 nella galleria">
+                        <img src="assets/img/locale-frascati-grid2.webp" alt="Dettaglio del tetto in legno e delle travi in acciaio" width="1200" height="800" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105">
+                    </div>
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="5" tabindex="0" role="button" aria-label="Apri immagine 6 nella galleria">
+                        <img src="assets/img/locale-frascati-lb27.webp" alt="Struttura in acciaio e solaio in lamiera grecata durante i lavori" width="1600" height="1067" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105">
+                    </div>
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="6" tabindex="0" role="button" aria-label="Apri immagine 7 nella galleria">
+                        <img src="locale-frascati-2026-01.jpeg" alt="Gli interni del locale durante le demolizioni iniziali" width="2000" height="1500" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105">
+                    </div>
+                    <div class="relative h-[180px] sm:h-[250px] md:h-[450px] overflow-hidden group cursor-pointer gallery-item" data-index="7" tabindex="0" role="button" aria-label="Apri immagine 8 nella galleria">
+                        <img src="locale-frascati-2026-durante.jpeg" alt="Preparazione del pavimento e completamento degli interni durante il cantiere" width="2000" height="1500" loading="lazy" decoding="async" class="img-enhance-gallery group-hover:scale-105">
                     </div>
                 </div>
             </div>
@@ -344,7 +350,7 @@
 
                 <!-- Immagine -->
                 <img id="lightbox-img" alt="Immagine del progetto ingrandita"
-                    style="max-width:100%; max-height:100%; object-fit:contain; display:block; transition:opacity 0.3s; user-select:none; -webkit-user-select:none; filter: contrast(1.08) saturate(1.12) brightness(1.03);">
+                    style="max-width:100%; max-height:100%; object-fit:contain; display:block; transition:opacity 0.3s; user-select:none; -webkit-user-select:none;">
 
                 <!-- Freccia destra — overlay -->
                 <button id="lightbox-next" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); z-index:105; background:rgba(0,0,0,0.3); border:none; cursor:pointer; color:rgba(255,255,255,0.5); transition:color 0.3s, background 0.3s; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center;" aria-label="Immagine successiva"
@@ -490,7 +496,8 @@
         });
 
         handle.addEventListener('keydown', (e) => {
-            const current = parseFloat(handle.style.left) || 50;
+            const position = parseFloat(handle.style.left);
+            const current = Number.isFinite(position) ? position : 50;
             if (e.key === 'ArrowLeft') { setPosition(current - 5); e.preventDefault(); }
             if (e.key === 'ArrowRight') { setPosition(current + 5); e.preventDefault(); }
             if (e.key === 'Home') { setPosition(0); e.preventDefault(); }
@@ -505,37 +512,32 @@
     <script>
     (function() {
         const galleryImages = [
+            'assets/img/locale-frascati-20261030-panoramica.webp',
+            'assets/img/locale-frascati-20261030-pietra.webp',
+            'assets/img/locale-frascati-20261030-cucina.webp',
+            'assets/img/locale-frascati-20261030-bagno.webp',
+            'assets/img/locale-frascati-grid2.webp',
+            'assets/img/locale-frascati-lb27.webp',
             'locale-frascati-2026-01.jpeg',
-            'locale-frascati-2026-04.jpeg',
+            'locale-frascati-2026-durante.jpeg',
+            'assets/img/locale-frascati-20261030-dopo.webp',
             'locale-frascati-2026-06.jpeg',
             'locale-frascati-2026-dopo.jpeg',
-            'assets/img/locale-frascati-lb1.webp',
-            'assets/img/locale-frascati-lb2.webp',
-            'assets/img/locale-frascati-lb5.webp',
-            'assets/img/locale-frascati-lb6.webp',
-            'assets/img/locale-frascati-lb8.webp',
-            'assets/img/locale-frascati-lb9.webp',
-            'assets/img/locale-frascati-lb10.webp',
-            'assets/img/locale-frascati-lb11.webp',
-            'assets/img/locale-frascati-lb13.webp',
-            'assets/img/locale-frascati-lb14.webp',
-            'assets/img/locale-frascati-lb15.webp',
-            'assets/img/locale-frascati-lb16.webp',
-            'assets/img/locale-frascati-lb17.webp',
-            'assets/img/locale-frascati-lb19.webp',
-            'assets/img/locale-frascati-lb20.webp',
-            'assets/img/locale-frascati-lb21.webp',
-            'assets/img/locale-frascati-lb22.webp',
-            'assets/img/locale-frascati-lb24.webp',
-            'assets/img/locale-frascati-lb25.webp',
-            'assets/img/locale-frascati-lb26.webp',
-            'assets/img/locale-frascati-lb27.webp',
-            'assets/img/locale-frascati-lb28.webp',
             'assets/img/locale-frascati-lb29b.webp',
-            'assets/img/locale-frascati-lb30.webp',
-            'assets/img/locale-frascati-lb32.webp',
-            'assets/img/locale-frascati-lb-unsplash2.webp',
-            'assets/img/locale-frascati-lb-unsplash3.webp'
+        ];
+        const galleryDescriptions = [
+            'Panoramica del locale ristrutturato e arredato',
+            'Parete originale in pietra e zona salotto',
+            'Cucina e finiture del locale a lavori conclusi',
+            'Bagno ristrutturato con doccia e parete in pietra',
+            'Tetto in legno e travi in acciaio',
+            'Struttura del solaio in acciaio e lamiera grecata',
+            'Demolizioni iniziali negli interni',
+            'Preparazione del pavimento durante il cantiere',
+            'Il locale a lavori conclusi, vista dalla cartella Dopo',
+            'Consolidamento delle murature durante i lavori',
+            'Completamento delle finiture prima degli arredi',
+            'Dettaglio del lucernario e della copertura in legno'
         ];
 
         let currentIndex = 0;
@@ -561,6 +563,7 @@
             lightboxImg.style.opacity = 0;
             setTimeout(function() {
                 lightboxImg.src = galleryImages[currentIndex];
+                lightboxImg.alt = galleryDescriptions[currentIndex];
                 lightboxImg.style.opacity = 1;
             }, 150);
             lightboxCounter.textContent = (currentIndex + 1) + ' / ' + galleryImages.length;
@@ -579,6 +582,12 @@
         document.querySelectorAll('.gallery-item').forEach(function(item) {
             item.addEventListener('click', function() {
                 openLightbox(parseInt(this.getAttribute('data-index')));
+            });
+            item.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openLightbox(parseInt(this.getAttribute('data-index')));
+                }
             });
         });
 
